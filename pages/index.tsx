@@ -7,9 +7,6 @@ const Home: NextPage = () => {
     <div className="container mx-auto my-4 px-4">
       <Head>
         <title>Portfolio</title>
-        <meta name="description" content="Portfolio" />
-        <meta name="robots" content="noindex" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="py-8"></div>
