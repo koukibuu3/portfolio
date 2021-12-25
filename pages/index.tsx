@@ -1,8 +1,17 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-const Home: NextPage = () => {
+import { client } from '../libs/client'
+
+type Props = {
+  introduction: {
+    title: string
+    detail: string
+  }
+}
+
+const Home: NextPage<Props> = ({ introduction }) => {
   return (
     <div className="container mx-auto my-4 px-4">
       <Head>
@@ -18,9 +27,19 @@ const Home: NextPage = () => {
         height="169"
       />
 
-      <h1 className="text-5xl py-4 px-2">Title</h1>
+      <h1 className="text-5xl py-4 px-2">{introduction.title}</h1>
+      <p className="text-base px-2">{introduction.detail}</p>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const introduction = await client.get({
+    endpoint: 'introduction',
+  })
+  return {
+    props: { introduction },
+  }
 }
 
 export default Home
