@@ -2,18 +2,12 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
+import Skills from '../components/Skills'
 import { client } from '../libs/client'
+import { Portfolio } from '../types'
 
 type Props = {
-  portfolio: {
-    title: string
-    detail: string
-    mainImage: {
-      url: string
-      height: number
-      width: number
-    }
-  }
+  portfolio: Portfolio
 }
 
 const Home: NextPage<Props> = ({ portfolio }) => {
@@ -35,6 +29,8 @@ const Home: NextPage<Props> = ({ portfolio }) => {
 
       <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
       <p className="text-base px-2">{portfolio.detail}</p>
+
+      <Skills skills={portfolio.skills} />
     </div>
   )
 }
