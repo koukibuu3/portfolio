@@ -5,13 +5,18 @@ import Image from 'next/image'
 import { client } from '../libs/client'
 
 type Props = {
-  introduction: {
+  portfolio: {
     title: string
     detail: string
+    mainImage: {
+      url: string
+      height: number
+      width: number
+    }
   }
 }
 
-const Home: NextPage<Props> = ({ introduction }) => {
+const Home: NextPage<Props> = ({ portfolio }) => {
   return (
     <div className="container mx-auto my-4 px-4">
       <Head>
@@ -21,24 +26,25 @@ const Home: NextPage<Props> = ({ introduction }) => {
       <div className="py-8"></div>
 
       <Image
-        alt="mainimage"
-        src="/images/mainimage.png"
-        width="380"
-        height="169"
+        alt="メイン画像"
+        src={portfolio.mainImage.url}
+        width={380}
+        height={169}
+        priority
       />
 
-      <h1 className="text-5xl py-4 px-2">{introduction.title}</h1>
-      <p className="text-base px-2">{introduction.detail}</p>
+      <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
+      <p className="text-base px-2">{portfolio.detail}</p>
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const introduction = await client.get({
-    endpoint: 'introduction',
+  const portfolio = await client.get({
+    endpoint: 'portfolio',
   })
   return {
-    props: { introduction },
+    props: { portfolio },
   }
 }
 
