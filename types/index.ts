@@ -22,9 +22,11 @@ export type Account = {
   url: string
 }
 
-export type Qiita = {
-  url: string
+export type Article = {
   title: string
+  body: string
+  url: string
+  type: 'qiita' | 'zenn'
   created_at: string
   updated_at: string
 }
