@@ -21,3 +21,10 @@ export type Account = {
   type: [string]
   url: string
 }
+
+export type Qiita = {
+  url: string
+  title: string
+  created_at: string
+  updated_at: string
+}
