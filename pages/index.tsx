@@ -2,14 +2,8 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
+import Accounts from '../components/Accounts'
 import Skills from '../components/Skills'
-import {
-  FacebookIcon,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  ZennIcon,
-} from '../components/icons'
 import { client } from '../libs/client'
 import { Portfolio } from '../types'
 
@@ -36,14 +30,7 @@ const Home: NextPage<Props> = ({ portfolio }) => {
 
       <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
       <p className="text-base px-2">{portfolio.detail}</p>
-
-      <div className="flex my-2">
-        <TwitterIcon />
-        <FacebookIcon />
-        <GithubIcon />
-        <LinkedinIcon />
-        <ZennIcon />
-      </div>
+      <Accounts accounts={portfolio.accounts} />
 
       <Skills skills={portfolio.skills} />
     </div>

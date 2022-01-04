@@ -2,6 +2,7 @@ export type Portfolio = {
   title: string
   detail: string
   mainImage: MainImage
+  accounts: Account[]
   skills: Skill[]
 }
 
