@@ -6,7 +6,9 @@ import Accounts from '../components/Accounts'
 import Articles from '../components/Articles'
 import Skills from '../components/Skills'
 import { client } from '../libs/client'
+import { qiitaClient } from '../libs/qiitaClient'
 import { Portfolio, Article } from '../types'
+import { QiitaItem } from '../types/QiitaItem'
 
 type Props = {
   portfolio: Portfolio
@@ -42,12 +44,23 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const portfolio = await client.get({
+  const portfolio = await client.get<Portfolio>({
     endpoint: 'portfolio',
   })
-  const articles = await fetch(
-    'https://qiita.com/api/v2/users/koukibuu3/items?page=1&per_page=5'
-  ).then((res) => res.json())
+  const qiitaItems = await qiitaClient
+    .get<QiitaItem[]>('items')
+    .then((res) => res.data)
+  const articles = qiitaItems.map(
+    (qiitaItem): Article => ({
+      id: qiitaItem.id,
+      title: qiitaItem.title,
+      body: qiitaItem.body,
+      url: qiitaItem.url,
+      type: 'qiita',
+      created_at: qiitaItem.created_at,
+      updated_at: qiitaItem.updated_at,
+    })
+  )
   return {
     props: { portfolio, articles },
   }
