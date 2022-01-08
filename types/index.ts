@@ -1,33 +1,7 @@
-export type Portfolio = {
-  title: string
-  detail: string
-  mainImage: MainImage
-  accounts: Account[]
-  skills: Skill[]
-}
-
-export type MainImage = {
-  url: string
-  height: number
-  width: number
-}
-
-export type Skill = {
-  name: string
-  value: number
-}
-
-export type Account = {
-  type: [string]
-  url: string
-}
-
-export type Article = {
-  id: string
-  title: string
-  body: string
-  url: string
-  type: 'qiita' | 'zenn'
-  created_at: string
-  updated_at: string
-}
+export type { default as Account } from './Account'
+export type { default as Article } from './Article'
+export type { default as Portfolio } from './Portfolio'
+export type { default as QiitaItem } from './QiitaItem'
+export type { default as Skill } from './Skill'
+export type { default as ZennFeed } from './ZennFeed'
+export type { default as ZennItem } from './ZennItem'

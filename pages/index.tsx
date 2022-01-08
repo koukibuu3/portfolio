@@ -3,15 +3,9 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Accounts from '../components/Accounts'
-import Articles from '../components/Articles'
-import Skills from '../components/Skills'
-import { client } from '../libs/client'
-import { qiitaClient } from '../libs/qiitaClient'
-import { zennClient } from '../libs/zennClient'
-import { Portfolio, Article } from '../types'
-import { QiitaItem } from '../types/QiitaItem'
-import { ZennItem } from '../types/ZennItem'
+import { Accounts, Articles, Skills } from '../components'
+import { cmsClient, qiitaClient, zennClient } from '../libs'
+import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
 
 type Props = {
   portfolio: Portfolio
@@ -47,7 +41,7 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const portfolio = await client.get<Portfolio>({
+  const portfolio = await cmsClient.get<Portfolio>({
     endpoint: 'portfolio',
   })
   const qiitaItems: QiitaItem[] = await qiitaClient.get()

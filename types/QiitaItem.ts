@@ -1,4 +1,4 @@
-export type QiitaItem = {
+type QiitaItem = {
   rendered_body: string
   body: string
   coediting: boolean
@@ -46,3 +46,5 @@ export type QiitaItem = {
     name: string
   } | null
 }
+
+export default QiitaItem

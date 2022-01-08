@@ -1,6 +1,6 @@
-import { ZennItem } from './ZennItem'
+import ZennItem from './ZennItem'
 
-export type ZennFeed = {
+type ZennFeed = {
   title: string
   description: string
   link: string
@@ -18,3 +18,5 @@ export type ZennFeed = {
   }
   items: ZennItem[]
 }
+
+export default ZennFeed

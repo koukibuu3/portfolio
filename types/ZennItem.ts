@@ -1,4 +1,4 @@
-export type ZennItem = {
+type ZennItem = {
   creator: string
   title: string
   link: string
@@ -13,3 +13,5 @@ export type ZennItem = {
   guid: string
   isoDate: string
 }
+
+export default ZennItem

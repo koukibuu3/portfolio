@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-import { QiitaItem } from '../types/QiitaItem'
+import { QiitaItem } from '../types'
 
-export const qiitaClient = {
+const qiitaClient = {
   get: async (): Promise<QiitaItem[]> => {
     const res = await axios
       .create({
@@ -20,3 +20,5 @@ export const qiitaClient = {
     return res.data
   },
 }
+
+export default qiitaClient
