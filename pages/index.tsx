@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Accounts, Articles, Skills } from '../components'
+import { Accounts, Articles, Footer, Skills } from '../components'
 import { cmsClient, qiitaClient, zennClient } from '../libs'
 import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
 
@@ -36,6 +36,8 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
       <Skills skills={portfolio.skills} />
 
       <Articles articles={articles} />
+
+      <Footer />
     </div>
   )
 }
