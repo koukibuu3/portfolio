@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -50,7 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
     endpoint: 'portfolio',
   })
   const qiitaItems: QiitaItem[] = await qiitaClient.get()
-  const articles = qiitaItems.map(
+  const qiitaArticles = qiitaItems.map(
     (qiitaItem): Article => ({
       id: qiitaItem.id,
       title: qiitaItem.title,
@@ -62,22 +63,25 @@ export const getStaticProps: GetStaticProps = async () => {
     })
   )
   const zennItems: ZennItem[] = await zennClient.get()
-  articles.push(
-    ...zennItems.map(
-      (zennItem): Article => ({
-        id: zennItem.link.replace(/^.+articles\//, ''),
-        title: zennItem.title,
-        body: zennItem.content,
-        url: zennItem.link,
-        type: 'zenn',
-        created_at: zennItem.pubDate,
-        updated_at: zennItem.pubDate,
-      })
-    )
+  const zennArticles = zennItems.map(
+    (zennItem): Article => ({
+      id: zennItem.link.replace(/^.+articles\//, ''),
+      title: zennItem.title,
+      body: zennItem.content,
+      url: zennItem.link,
+      type: 'zenn',
+      created_at: zennItem.pubDate,
+      updated_at: zennItem.pubDate,
+    })
   )
 
+  const articles = qiitaArticles.concat(zennArticles)
+  const sortedArticles = articles
+    .sort((a, b) => (dayjs(a.created_at).isAfter(b.created_at) ? -1 : 1))
+    .slice(0, 5) // FIXME pagination作るまで仮で5件表示
+
   return {
-    props: { portfolio, articles },
+    props: { portfolio, articles: sortedArticles },
   }
 }
 
