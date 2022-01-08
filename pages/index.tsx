@@ -49,9 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const portfolio = await client.get<Portfolio>({
     endpoint: 'portfolio',
   })
-  const qiitaItems = await qiitaClient
-    .get<QiitaItem[]>('items')
-    .then((res) => res.data)
+  const qiitaItems: QiitaItem[] = await qiitaClient.get()
   const articles = qiitaItems.map(
     (qiitaItem): Article => ({
       id: qiitaItem.id,
