@@ -7,8 +7,10 @@ import Articles from '../components/Articles'
 import Skills from '../components/Skills'
 import { client } from '../libs/client'
 import { qiitaClient } from '../libs/qiitaClient'
+import { zennClient } from '../libs/zennClient'
 import { Portfolio, Article } from '../types'
 import { QiitaItem } from '../types/QiitaItem'
+import { ZennItem } from '../types/ZennItem'
 
 type Props = {
   portfolio: Portfolio
@@ -61,6 +63,21 @@ export const getStaticProps: GetStaticProps = async () => {
       updated_at: qiitaItem.updated_at,
     })
   )
+  const zennItems: ZennItem[] = await zennClient.get()
+  articles.push(
+    ...zennItems.map(
+      (zennItem): Article => ({
+        id: zennItem.link.replace(/^.+articles\//, ''),
+        title: zennItem.title,
+        body: zennItem.content,
+        url: zennItem.link,
+        type: 'zenn',
+        created_at: zennItem.pubDate,
+        updated_at: zennItem.pubDate,
+      })
+    )
+  )
+
   return {
     props: { portfolio, articles },
   }
