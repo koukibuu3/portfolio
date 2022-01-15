@@ -4,10 +4,11 @@ import { Skill } from '../types'
 
 type Props = {
   skills: Skill[]
+  classNames?: string
 }
 
-const Skills: React.VFC<Props> = ({ skills }) => (
-  <section id="skills" className="m-2 pt-20">
+const Skills: React.VFC<Props> = ({ skills, classNames }) => (
+  <section id="skills" className={`m-2 pt-20 ${classNames}`}>
     <h2 className="text-4xl">Skills</h2>
     <div className="text-xl my-2">技術</div>
     <ul className="m-5">
