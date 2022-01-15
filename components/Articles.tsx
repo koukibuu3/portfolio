@@ -11,7 +11,7 @@ type Props = {
 
 const Articles: React.VFC<Props> = ({ articles }) => {
   return (
-    <section className="mx-2 my-16">
+    <section id="articles" className="m-2 pt-20">
       <h2 className="text-4xl">Articles</h2>
       <div className="text-xl my-2">開発メモ</div>
       <ul className="grid grid-cols-2 gap-4 my-6">

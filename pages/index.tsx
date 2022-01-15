@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { Accounts, Articles, Footer, Skills } from '../components'
+import { Accounts, Articles, Footer, Header, Skills } from '../components'
 import { cmsClient, qiitaClient, zennClient } from '../libs'
 import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
 
@@ -19,21 +19,23 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
         <title>Portfolio</title>
       </Head>
 
-      <div className="py-8"></div>
+      <Header />
 
-      <Image
-        alt="メイン画像"
-        src={portfolio.mainImage.url}
-        width={380}
-        height={169}
-        priority
-      />
+      <div className="mt-20">
+        <Image
+          alt="メイン画像"
+          src={portfolio.mainImage.url}
+          width={380}
+          height={169}
+          priority
+        />
 
-      <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
-      <p className="text-base px-2">{portfolio.detail}</p>
-      <Accounts accounts={portfolio.accounts} />
+        <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
+        <p className="text-base px-2">{portfolio.detail}</p>
+        <Accounts accounts={portfolio.accounts} />
 
-      <Skills skills={portfolio.skills} />
+        <Skills skills={portfolio.skills} />
+      </div>
 
       <Articles articles={articles} />
 

@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Skills: React.VFC<Props> = ({ skills }) => (
-  <section className="mx-2 my-16">
+  <section id="skills" className="m-2 pt-20">
     <h2 className="text-4xl">Skills</h2>
     <div className="text-xl my-2">技術</div>
     <ul className="m-5">
