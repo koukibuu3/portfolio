@@ -8,10 +8,10 @@ type Props = {
 }
 
 const Skills: React.VFC<Props> = ({ skills, classNames }) => (
-  <section id="skills" className={`m-2 pt-20 ${classNames}`}>
+  <section id="skills" className={classNames}>
     <h2 className="text-4xl">Skills</h2>
     <div className="text-xl my-2">技術</div>
-    <ul className="m-5">
+    <ul className="lg:pr-20 m-5">
       {skills.map((skill) => (
         <li className="grid grid-cols-3 my-3" key={skill.name}>
           <div className="col-span-1 self-center">{skill.name}</div>

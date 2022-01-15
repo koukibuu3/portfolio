@@ -20,8 +20,8 @@ const Introduce: React.VFC<Props> = ({ portfolio, classNames }) => {
         height={169}
         priority
       />
-      <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
-      <p className="text-base px-2">{portfolio.detail}</p>
+      <h1 className="text-5xl py-4 my-4 mr-4">{portfolio.title}</h1>
+      <p className="text-base my-4 mr-4">{portfolio.detail}</p>
       <Accounts accounts={portfolio.accounts} />
     </section>
   )

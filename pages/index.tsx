@@ -1,9 +1,8 @@
 import dayjs from 'dayjs'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
-import { Accounts, Articles, Footer, Header, Skills } from '../components'
+import { Articles, Footer, Header, Introduce, Skills } from '../components'
 import { cmsClient, qiitaClient, zennClient } from '../libs'
 import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
 
@@ -14,33 +13,25 @@ type Props = {
 
 const Home: NextPage<Props> = ({ portfolio, articles }) => {
   return (
-    <div className="container mx-auto my-4 px-4">
+    <>
       <Head>
         <title>Portfolio</title>
       </Head>
-
       <Header />
 
-      <div className="mt-20">
-        <Image
-          alt="メイン画像"
-          src={portfolio.mainImage.url}
-          width={380}
-          height={169}
-          priority
-        />
-
-        <h1 className="text-5xl py-4 px-2">{portfolio.title}</h1>
-        <p className="text-base px-2">{portfolio.detail}</p>
-        <Accounts accounts={portfolio.accounts} />
-
-        <Skills skills={portfolio.skills} />
+      <div className="container text-gray-600 mx-auto my-20">
+        <div className="lg:flex lg:flex-row-reverse">
+          <Introduce
+            portfolio={portfolio}
+            classNames="lg:flex-1 lg:pt-16 m-2"
+          />
+          <Skills skills={portfolio.skills} classNames="lg:flex-1 pt-20 m-2" />
+        </div>
+        <Articles articles={articles} />
       </div>
 
-      <Articles articles={articles} />
-
       <Footer />
-    </div>
+    </>
   )
 }
 

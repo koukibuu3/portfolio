@@ -14,16 +14,16 @@ const Articles: React.VFC<Props> = ({ articles }) => {
     <section id="articles" className="m-2 pt-20">
       <h2 className="text-4xl">Articles</h2>
       <div className="text-xl my-2">開発メモ</div>
-      <ul className="grid grid-cols-2 gap-4 my-6">
+      <ul className="grid grid-cols-2 gap-4 my-6 lg:mx-5">
         {articles.map((article) => (
-          <li className="col-span-2" key={article.id}>
+          <li className="col-span-2 lg:col-span-1" key={article.id}>
             <a href={article.url} target="_blank" rel="noreferrer">
               <div className="bg-gray-100 hover:bg-gray-200 rounded-lg h-28 py-4 px-6">
-                <time className="block text-right text-sm">
+                <time className="block h-4 text-gray-500 text-right text-xs my-1">
                   {dayjs(article.created_at).format('YYYY/MM/DD')}
                 </time>
                 <h3 className="text-lg my-1 truncate">{article.title}</h3>
-                <div className="flex items-center text-xs my-2">
+                <div className="flex items-center text-gray-500 text-xs my-2">
                   <div className="h-4 w-4">
                     <Image
                       src={`/img/${article.type}.png`}

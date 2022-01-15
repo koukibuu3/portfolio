@@ -6,7 +6,7 @@ const Header: React.VFC = () => {
 
   return (
     <nav
-      className={`flex fixed top-0 left-0 right-0 z-10 p-2 lg:p-6 ${
+      className={`flex fixed top-0 inset-x-0 z-10 p-2 lg:p-5 lg:mx-28 xl:mx-44 2xl:mx-80 ${
         isOpenNavigation ? 'bg-gray-600' : 'bg-white'
       }`}
     >
@@ -18,17 +18,19 @@ const Header: React.VFC = () => {
         >
           <a
             href="#skills"
-            className="block text-center my-4 lg:mx-6 lg:my-0"
+            className="block text-center my-4 lg:mx-6 lg:my-0 lg:hover:text-gray-300"
             onClick={() => isOpenNavigation && setIsOpenNavigation(false)}
           >
-            Skills
+            <span className="block text-xl">Skills</span>
+            <span className="block text-xs">技術</span>
           </a>
           <a
             href="#articles"
-            className="block text-center my-4 lg:mx-6 lg:my-0"
+            className="block text-center my-4 lg:mx-6 lg:my-0 lg:hover:text-gray-300"
             onClick={() => isOpenNavigation && setIsOpenNavigation(false)}
           >
-            Articles
+            <span className="block text-xl">Articles</span>
+            <span className="block text-xs">開発メモ</span>
           </a>
         </div>
       </div>
