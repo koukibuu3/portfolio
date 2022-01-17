@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
   return (
     <>
       <Head>
-        <title>Portfolio</title>
+        <title>Portfolio | {portfolio.title}</title>
       </Head>
       <Header />
 
