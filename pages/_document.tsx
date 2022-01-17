@@ -17,7 +17,6 @@ class MyDocument extends Document {
       <Html lang="ja">
         <Head>
           <meta name="description" content="Portfolio" />
-          <meta name="robots" content="noindex" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
