@@ -13,18 +13,16 @@ const Skills: React.VFC<Props> = ({ skills, classNames }) => (
     <div className="text-xl my-2">技術</div>
     <ul className="lg:pr-20 m-5">
       {skills.map((skill) => (
-        <li className="grid grid-cols-3 my-3" key={skill.name}>
-          <div className="col-span-1 self-center">{skill.name}</div>
-          <div className="col-span-2 h-6 flex">
-            <div className="text-sm self-center mr-3">{0}</div>
-            <div className="bg-gray-200 h-2.5 rounded-full flex-1 self-center">
+        <li className="my-3 inline-block" key={skill.name}>
+          <span className="self-center">{skill.name}</span>
+          <span className="mx-2">/</span>
+          {/* <div className="bg-gray-200 h-2.5 rounded-full flex-1 self-center">
               <div
                 className="bg-gray-600 h-2.5 rounded-l-full flex-1"
                 style={{ width: `${skill.value}%` }}
               />
             </div>
-            <div className="text-sm self-center ml-3">{100}</div>
-          </div>
+            <div className="text-sm self-center ml-3">{100}</div> */}
         </li>
       ))}
     </ul>
