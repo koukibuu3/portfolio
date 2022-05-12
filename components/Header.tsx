@@ -32,6 +32,14 @@ const Header: React.VFC = () => {
             <span className="block text-xl">Articles</span>
             <span className="block text-xs">開発メモ</span>
           </a>
+          <a
+            href="#contacts"
+            className="block text-center my-4 lg:mx-6 lg:my-0 lg:hover:text-gray-300"
+            onClick={() => isOpenNavigation && setIsOpenNavigation(false)}
+          >
+            <span className="block text-xl">Contacts</span>
+            <span className="block text-xs">お問い合わせ</span>
+          </a>
         </div>
       </div>
       <div className="lg:hidden h-14">

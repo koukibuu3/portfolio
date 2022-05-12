@@ -2,7 +2,14 @@ import dayjs from 'dayjs'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { Articles, Footer, Header, Introduce, Skills } from '../components'
+import {
+  Articles,
+  ContactForm,
+  Footer,
+  Header,
+  Introduce,
+  Skills,
+} from '../components'
 import { cmsClient, qiitaClient, zennClient } from '../libs'
 import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
 
@@ -28,6 +35,7 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
           <Skills skills={portfolio.skills} classNames="lg:flex-1 pt-20 m-2" />
         </div>
         <Articles articles={articles} />
+        <ContactForm />
       </div>
 
       <Footer />
