@@ -27,15 +27,15 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
 
       <div className="container text-gray-600 mx-auto my-2">
         <Header />
-        <div className="lg:flex lg:flex-row-reverse">
+        {/* <div className="lg:flex lg:flex-row-reverse">
           <Introduce
             portfolio={portfolio}
             classNames="lg:flex-1 lg:pt-16 m-2"
           />
           <Skills skills={portfolio.skills} classNames="lg:flex-1 pt-20 m-2" />
-        </div>
+        </div> */}
         <Articles articles={articles} />
-        <ContactForm />
+        {/* <ContactForm /> */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442796377236015"
