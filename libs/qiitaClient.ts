@@ -16,7 +16,7 @@ const fetch = async (): Promise<QiitaItem[]> => {
 }
 
 const qiitaClient = {
-  get: async (): Promise<Article[]> => {
+  getArticles: async (): Promise<Article[]> => {
     const qiitaItems = await fetch()
     return qiitaItems.map(
       (qiitaItem): Article => ({

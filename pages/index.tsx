@@ -10,8 +10,10 @@ import {
   Introduce,
   Skills,
 } from '../components'
-import { cmsClient, qiitaClient, zennClient } from '../libs'
-import { Article, Portfolio, QiitaItem, ZennItem } from '../types'
+import { client, cmsClient } from '../libs'
+import { Article, Portfolio } from '../types'
+
+const PER_PAGE = 10
 
 type Props = {
   portfolio: Portfolio
@@ -60,38 +62,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const portfolio = await cmsClient.get<Portfolio>({
     endpoint: 'portfolio',
   })
-  const qiitaItems: QiitaItem[] = await qiitaClient.get()
-  const qiitaArticles = qiitaItems.map(
-    (qiitaItem): Article => ({
-      id: qiitaItem.id,
-      title: qiitaItem.title,
-      body: qiitaItem.body,
-      url: qiitaItem.url,
-      type: 'qiita',
-      created_at: qiitaItem.created_at,
-      updated_at: qiitaItem.updated_at,
-    })
-  )
-  const zennItems: ZennItem[] = await zennClient.get()
-  const zennArticles = zennItems.map(
-    (zennItem): Article => ({
-      id: zennItem.link.replace(/^.+articles\//, ''),
-      title: zennItem.title,
-      body: zennItem.content,
-      url: zennItem.link,
-      type: 'zenn',
-      created_at: zennItem.pubDate,
-      updated_at: zennItem.pubDate,
-    })
-  )
-
-  const articles = qiitaArticles.concat(zennArticles)
-  const sortedArticles = articles
-    .sort((a, b) => (dayjs(a.created_at).isAfter(b.created_at) ? -1 : 1))
-    .slice(0, 5) // FIXME pagination作るまで仮で5件表示
+  const articles = await client.getArticles()
 
   return {
-    props: { portfolio, articles: sortedArticles },
+    props: { portfolio, articles },
   }
 }
 

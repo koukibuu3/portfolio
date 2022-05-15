@@ -10,7 +10,7 @@ const fetch = async (): Promise<ZennItem[]> => {
 }
 
 const zennClient = {
-  get: async (): Promise<Article[]> => {
+  getArticles: async (): Promise<Article[]> => {
     const zennItems = await fetch()
     return zennItems.map(
       (zennItem): Article => ({
