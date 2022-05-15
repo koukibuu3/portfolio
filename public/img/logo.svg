@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 2200 2200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>.cls-1 {
+        clip-path: url(#a);
+      }
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+      }
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #000;
+      }
+      .cls-2, .cls-4, .cls-5, .cls-6 {
+        stroke-linecap: round;
+      }
+      .cls-2 {
+        stroke-width: 38px;
+      }
+      .cls-3 {
+        stroke-linecap: square;
+      }
+      .cls-3, .cls-4, .cls-6 {
+        stroke-width: 28px;
+      }
+      .cls-4, .cls-6 {
+        stroke-linejoin: round;
+      }
+      .cls-5 {
+        stroke-width: 32px;
+      }
+      .cls-6 {
+        stroke: rgba(239,200,221,0.7);
+      }
+      .cls-7 {
+        fill: #fff;
+      }</style>
+<clipPath id="a">
+<rect width="2200" height="2200"/>
+</clipPath>
+</defs>
+<g class="cls-1" data-name="cls-1">
+<rect class="cls-7" width="2200" height="2200"/>
+<g transform="translate(40 -36)" data-name="group-1">
+<path class="cls-2" transform="translate(412 557)" d="m95.334 104.77s-165.08 136.85-143.48 441.05" data-name="path-1"/>
+<path class="cls-2" transform="translate(412 557)" d="m96.167 103.93s-37.8-57.7 50.61-188.33 125.82-63.291 125.82-63.291 20.816 29.371 57 39.195c47.613 22.582 57.088 38.415 67.373 72.64" data-name="path-2"/>
+<path class="cls-2" transform="translate(412 557)" d="m398.91-35.046s179.39-107.7 516.07-0.7" data-name="path-3"/>
+<path class="cls-2" transform="translate(412 557)" d="m968.54-22.1s38.07-10.369 60.5-28.869c25.638-19.423 139.66-53.077 150.49-54.056 1.631-0.1 10.949 1.71 11.952 3.458 6.092 10.615 30.869 60.135 37.363 132.97 5.126 84.522 0 108.05 0 108.05" data-name="path-4"/>
+<path class="cls-2" transform="translate(387 580)" d="m1254.2 117.9s76.753 140.46 70.343 407.8c-8.741 245.93-86.106 327.05-191.34 424.18-124.15 106.65-209.67 123.67-209.67 123.67l-117.76 23.782" data-name="path-5"/>
+<path class="cls-2" transform="translate(409 550)" d="m1331.3 745.05s154.04 145.34 75.657 288.58c-61.26 101.08-166.8 112.93-383.3 104.78" data-name="path-7"/>
+<path class="cls-2" transform="translate(412 553)" d="m886.64 1116.9s62.713 198.78 146.78-61.518" data-name="path-8"/>
+<path class="cls-2" transform="translate(402 569)" d="m1426.9 1020.1s56.281 124.11-19.713 124.58c-16.65-0.24-35.473-12.415-61.818-37.21" data-name="path-9"/>
+<path class="cls-2" transform="translate(412 557)" d="m-213.78 566.41s-37.052 3.042-21.822 92.543 138.38 611.7 138.38 611.7 5.839 38.685 58.358 40.094 803.66 11.539 803.66 11.539 45.117-1.312 38.887-60.5-132.98-641.85-132.98-641.85-2.156-62.481-66.751-67.093-758.26 5.732-758.26 5.732" data-name="path-10"/>
+<path class="cls-2" transform="translate(460 576)" d="m820.28 1303.3s7.422-17.03 38.6-27.452c46.766-16.927 175.07-64.617 175.07-64.617s12.15-3.485 22.359-29.057" data-name="path-11"/>
+<path class="cls-2" transform="translate(660.5 772.5)" d="m0 0 4 50" data-name="path-12"/>
+<line class="cls-2" transform="translate(1143.5 784.5)" x2="2" y2="50" data-name="line-2"/>
+<line class="cls-2" transform="translate(662.5 772.5)" x1="8" y1="40" data-name="line-3"/>
+<line class="cls-2" transform="translate(1136.5 787.5)" x1="1" y1="34" data-name="line-4"/>
+<path class="cls-2" transform="translate(396 560)" d="m197.55 541.17s3.606-135.2 231.44-139.49c198.2-1.548 249.34 47.557 261.05 123.56 6.109 34.741-4.3 69.041-4.3 69.041" data-name="path-13"/>
+<path class="cls-3" transform="translate(396 558.43)" d="m317.08 529.82s4.512-30.433 18.537-30.151c10.733-0.321 12.22 7.747 20.129 30.151" data-name="path-14"/>
+<path class="cls-3" transform="translate(396 560)" d="m470.06 525.24s-1.194-28.706 19.792-30.16c15.885 3.269 12.836 7.623 20.8 30.16" data-name="path-15"/>
+<path class="cls-4" transform="translate(412 557)" d="m242.06 996.31s-45.393-2.183-58.164-53.13c-4.681-21.68 33.503-33.362 37.903-3.38 7.362-8.015 45.493-26.186 57.879-3.6 12.501 34.2-37.618 60.11-37.618 60.11z" data-name="path-16"/>
+<path class="cls-5" transform="translate(3181 1128)" d="m-1338.2 178s-20.063-19.83 51.07-67.849 85.685-15.185 89.256-6.826 16.293 46.408-6.176 48.315-51.766 4.89-53.382-13.438-8.318-41.237 24.643-70.806 78.352-82.209 141.09-86.893" data-name="path-17"/>
+<path class="cls-6" transform="translate(432.39 588.7)" d="m836.2 566.23 56.212 52.71 9.976-52.71 53.489 45.133 14.9-53.517 49.634 48.583" data-name="path-18"/>
+</g>
+</g>
+</svg>

@@ -24,9 +24,9 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
       <Head>
         <title>Portfolio | {portfolio.title}</title>
       </Head>
-      <Header />
 
-      <div className="container text-gray-600 mx-auto my-20">
+      <div className="container text-gray-600 mx-auto my-2">
+        <Header />
         <div className="lg:flex lg:flex-row-reverse">
           <Introduce
             portfolio={portfolio}
