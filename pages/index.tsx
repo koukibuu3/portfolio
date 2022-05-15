@@ -22,7 +22,7 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
   return (
     <>
       <Head>
-        <title>Portfolio | {portfolio.title}</title>
+        <title>Engineer&lsquo;s Blog | {portfolio.title}</title>
       </Head>
 
       <div className="container text-gray-600 mx-auto my-2">
