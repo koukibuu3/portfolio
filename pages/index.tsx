@@ -65,7 +65,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const articles = await client.getArticles()
 
   return {
-    props: { portfolio, articles },
+    props: {
+      portfolio,
+      articles: articles.slice(0, PER_PAGE),
+    },
   }
 }
 
