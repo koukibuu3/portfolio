@@ -1,16 +1,21 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
 import { Articles, Footer, Header } from '../../components'
+import { Pagination } from '../../components'
 import { client } from '../../libs'
-import { Article } from '../../types'
+import { Article, Page } from '../../types'
 
 const PER_PAGE = 10
 
-const Page: NextPage<{ articles: Article[] }> = ({ articles }) => {
+const Page: NextPage<{ articles: Article[]; page: Page }> = ({
+  articles,
+  page,
+}) => {
   return (
     <div className="container text-gray-600 mx-auto my-2">
       <Header />
       <Articles articles={articles} />
+      <Pagination page={page} />
       <Footer />
     </div>
   )
@@ -30,14 +35,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const articles = await client.getArticles()
-
   const id = Number(context.params?.id)
+  const [articles, page] = await client.getArticlesWithPagination(
+    (id - 1) * PER_PAGE,
+    PER_PAGE
+  )
 
   return {
-    props: {
-      articles: articles.slice((id - 1) * PER_PAGE, id * PER_PAGE),
-    },
+    props: { articles, page },
   }
 }
 

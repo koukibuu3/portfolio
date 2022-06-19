@@ -8,19 +8,21 @@ import {
   Footer,
   Header,
   Introduce,
+  Pagination,
   Skills,
 } from '../components'
 import { client, cmsClient } from '../libs'
-import { Article, Portfolio } from '../types'
+import { Article, Portfolio, Page } from '../types'
 
 const PER_PAGE = 10
 
 type Props = {
   portfolio: Portfolio
   articles: Article[]
+  page: Page
 }
 
-const Home: NextPage<Props> = ({ portfolio, articles }) => {
+const Home: NextPage<Props> = ({ portfolio, articles, page }) => {
   return (
     <>
       <Head>
@@ -37,6 +39,7 @@ const Home: NextPage<Props> = ({ portfolio, articles }) => {
           <Skills skills={portfolio.skills} classNames="lg:flex-1 pt-20 m-2" />
         </div> */}
         <Articles articles={articles} />
+        <Pagination page={page} />
         {/* <ContactForm /> */}
         <script
           async
@@ -62,13 +65,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const portfolio = await cmsClient.get<Portfolio>({
     endpoint: 'portfolio',
   })
-  const articles = await client.getArticles()
+  const [articles, page] = await client.getArticlesWithPagination(0, PER_PAGE)
 
   return {
-    props: {
-      portfolio,
-      articles: articles.slice(0, PER_PAGE),
-    },
+    props: { portfolio, articles, page },
   }
 }
 

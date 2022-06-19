@@ -11,7 +11,7 @@ type Props = {
 
 const Articles: React.VFC<Props> = ({ articles }) => {
   return (
-    <section id="articles" className="my-16">
+    <section id="articles" className="mt-16">
       <ul className="grid grid-cols-2 gap-4 my-6 lg:mx-5">
         {articles.map((article) => (
           <li className="col-span-2 lg:col-span-1" key={article.id}>
