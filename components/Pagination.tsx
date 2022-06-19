@@ -2,42 +2,58 @@ import Link from 'next/link'
 import React from 'react'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 
-const Pagination: React.VFC = () => {
+import { Page } from '../types'
+
+const Pagination: React.VFC<{ page: Page }> = ({ page }) => {
   return (
     <nav className="flex text-sm items-center text-center lg:mx-5">
-      <Link href="/pages/1" passHref>
-        <a className="inline-flex hover:text-orange-600">
+      {page.previousPage ? (
+        <Link href={`/pages/${page.previousPage}`} passHref>
+          <a className="inline-flex hover:text-orange-600">
+            <HiOutlineChevronLeft className="mx-1" size="1.3em" />
+            Previous
+          </a>
+        </Link>
+      ) : (
+        <span className="inline-flex text-gray-300 cursor-default">
           <HiOutlineChevronLeft className="mx-1" size="1.3em" />
           Previous
-        </a>
-      </Link>
+        </span>
+      )}
       <ul className="grow p-2">
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/1">1</Link>
-        </li>
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/2">2</Link>
-        </li>
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/3">3</Link>
-        </li>
-        <li className="inline-block px-4 cursor-default">...</li>
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/8">8</Link>
-        </li>
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/9">9</Link>
-        </li>
-        <li className="inline-block px-4 hover:text-orange-600">
-          <Link href="/pages/10">10</Link>
-        </li>
+        <span className="hidden md:inline-block">
+          {page.items.map((item) =>
+            item === page.currentPage ? (
+              <li key={item} className="inline-flex cursor-default">
+                <span className="inline-flex justify-center items-center w-6 h-6 mx-2 bg-gray-100 rounded-full">
+                  {item}
+                </span>
+              </li>
+            ) : (
+              <li key={item} className="inline-flex">
+                <Link href={`/pages/${item}`}>
+                  <a className="inline-flex justify-center items-center w-6 h-6 mx-2 hover:text-orange-600">
+                    {item}
+                  </a>
+                </Link>
+              </li>
+            )
+          )}
+        </span>
       </ul>
-      <Link href="/pages/2" passHref>
-        <a className="inline-flex hover:text-orange-600">
+      {page.nextPage ? (
+        <Link href={`/pages/${page.nextPage}`} passHref>
+          <a className="inline-flex hover:text-orange-600">
+            Next
+            <HiOutlineChevronRight className="mx-1" size="1.3em" />
+          </a>
+        </Link>
+      ) : (
+        <span className="inline-flex text-gray-300 cursor-default">
           Next
           <HiOutlineChevronRight className="mx-1" size="1.3em" />
-        </a>
-      </Link>
+        </span>
+      )}
     </nav>
   )
 }
