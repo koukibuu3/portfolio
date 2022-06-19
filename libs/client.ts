@@ -1,8 +1,11 @@
 import dayjs from 'dayjs'
 
-import { Article } from '../types'
+import { Article, Page as PageType } from '../types'
+import { Page } from '../valueObjects'
 
 import { zennClient, qiitaClient } from '.'
+
+const PER_PAGE = 10
 
 /** 記事を作成日の降順にソートする */
 const sortArticles = (articles: Article[]): Article[] => {
@@ -17,6 +20,23 @@ const client = {
     const zennArticles = await zennClient.getArticles()
 
     return sortArticles(qiitaArticles.concat(zennArticles))
+  },
+  getArticlesWithPagination: async (
+    offset = 0,
+    limit = 0
+  ): Promise<[Article[], PageType]> => {
+    const qiitaArticles = await qiitaClient.getArticles()
+    const zennArticles = await zennClient.getArticles()
+
+    const sortedArticles = sortArticles(qiitaArticles.concat(zennArticles))
+    const articles =
+      limit === undefined
+        ? sortedArticles.slice(offset)
+        : sortedArticles.slice(offset, offset + limit)
+
+    const page = new Page(offset, limit, sortedArticles.length).toObject()
+
+    return [articles, page]
   },
 }
 
