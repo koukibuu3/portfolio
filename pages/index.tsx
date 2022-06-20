@@ -40,20 +40,6 @@ const Home: NextPage<Props> = ({ portfolio, articles, page }) => {
         </div> */}
         <Articles articles={articles} />
         <Pagination page={page} />
-        {/* <ContactForm /> */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2442796377236015"
-          crossOrigin="anonymous"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-2442796377236015"
-          data-ad-slot="7530960298"
-        ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
       <Footer />
