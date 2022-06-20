@@ -11,7 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "axios": "0.24.0",
+    "axios": "0.27.2",
     "dayjs": "1.10.7",
     "microcms-js-sdk": "2.0.0",
     "next": "12.1.0",
