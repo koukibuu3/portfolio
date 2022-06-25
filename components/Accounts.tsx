@@ -13,7 +13,7 @@ type Props = {
   accounts: Account[]
 }
 
-const Accounts: React.VFC<Props> = ({ accounts }) => (
+const Accounts: React.FC<Props> = ({ accounts }) => (
   <div className="flex my-2">
     {accounts.map((account) => (
       <a

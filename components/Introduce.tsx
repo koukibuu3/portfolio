@@ -10,7 +10,7 @@ type Props = {
   classNames?: string
 }
 
-const Introduce: React.VFC<Props> = ({ portfolio, classNames }) => {
+const Introduce: React.FC<Props> = ({ portfolio, classNames }) => {
   return (
     <section className={classNames}>
       <Image

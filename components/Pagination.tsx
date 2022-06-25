@@ -4,7 +4,7 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 
 import { Page } from '../types'
 
-const Pagination: React.VFC<{ page: Page }> = ({ page }) => {
+const Pagination: React.FC<{ page: Page }> = ({ page }) => {
   return (
     <nav className="flex text-sm items-center text-center lg:mx-5">
       {page.previousPage ? (

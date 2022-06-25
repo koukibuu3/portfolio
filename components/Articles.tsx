@@ -9,7 +9,7 @@ type Props = {
   articles: Article[]
 }
 
-const Articles: React.VFC<Props> = ({ articles }) => {
+const Articles: React.FC<Props> = ({ articles }) => {
   return (
     <section id="articles" className="mt-16">
       <ul className="grid grid-cols-2 gap-4 my-6 lg:mx-5">

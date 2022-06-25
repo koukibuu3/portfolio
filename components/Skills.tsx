@@ -7,7 +7,7 @@ type Props = {
   classNames?: string
 }
 
-const Skills: React.VFC<Props> = ({ skills, classNames }) => (
+const Skills: React.FC<Props> = ({ skills, classNames }) => (
   <section id="skills" className={classNames}>
     <h2 className="text-4xl">Skills</h2>
     <div className="text-xl my-2">技術</div>

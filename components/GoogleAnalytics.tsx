@@ -3,7 +3,7 @@ import React from 'react'
 
 const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? ''
 
-const GoogleAnalytics: React.VFC = () => (
+const GoogleAnalytics: React.FC = () => (
   <>
     <Script
       defer
