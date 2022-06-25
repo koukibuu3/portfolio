@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi'
 
-import { Page } from '../types'
+import { Page } from '~/types'
 
 const Pagination: React.FC<{ page: Page }> = ({ page }) => {
   return (

@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 
-import { Portfolio } from '../types'
-
-import { Accounts } from '.'
+import { Accounts } from '~/components'
+import { Portfolio } from '~/types'
 
 type Props = {
   portfolio: Portfolio

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Skill } from '../types'
+import { Skill } from '~/types'
 
 type Props = {
   skills: Skill[]

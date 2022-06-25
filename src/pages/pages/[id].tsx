@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import { Articles, Footer, Header } from '../../components'
-import { Pagination } from '../../components'
-import { client } from '../../libs'
-import { Article, Page } from '../../types'
+import { Articles, Footer, Header } from '~/components'
+import { Pagination } from '~/components'
+import { client } from '~/libs'
+import { Article, Page } from '~/types'
 
 const PER_PAGE = 10
 

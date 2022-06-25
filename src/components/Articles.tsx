@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 
-import { Article } from '../types'
+import { Article } from '~/types'
 
 type Props = {
   articles: Article[]

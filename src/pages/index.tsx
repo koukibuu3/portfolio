@@ -10,9 +10,9 @@ import {
   Introduce,
   Pagination,
   Skills,
-} from '../components'
-import { client, cmsClient } from '../libs'
-import { Article, Portfolio, Page } from '../types'
+} from '~/components'
+import { client, cmsClient } from '~/libs'
+import { Article, Portfolio, Page } from '~/types'
 
 const PER_PAGE = 10
 

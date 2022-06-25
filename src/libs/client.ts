@@ -1,9 +1,8 @@
 import dayjs from 'dayjs'
 
-import { Article, Page as PageType } from '../types'
-import { Page } from '../valueObjects'
-
-import { zennClient, qiitaClient } from '.'
+import { zennClient, qiitaClient } from '~/libs'
+import { Article, Page as PageType } from '~/types'
+import { Page } from '~/valueObjects'
 
 const PER_PAGE = 10
 
