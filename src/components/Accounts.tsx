@@ -1,13 +1,14 @@
 import React from 'react'
 
+import { Account } from '../types'
+
 import {
   FacebookIcon,
   GithubIcon,
   LinkedinIcon,
   TwitterIcon,
   ZennIcon,
-} from '../components/icons'
-import { Account } from '../types'
+} from './icons'
 
 type Props = {
   accounts: Account[]

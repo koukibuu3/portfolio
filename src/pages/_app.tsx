@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '/public/css/globals.css'
 import type { AppProps } from 'next/app'
 
 import { GoogleAnalytics } from '../components'
