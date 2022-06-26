@@ -1,6 +1,6 @@
 import Parser from 'rss-parser'
 
-import { Article, ZennFeed, ZennItem } from '../types'
+import { Article, ZennFeed, ZennItem } from '~/types'
 
 const fetch = async (): Promise<ZennItem[]> => {
   const res = await new Parser<ZennFeed, ZennItem>().parseURL(

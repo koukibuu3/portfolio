@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ContactForm: React.VFC = () => {
+const ContactForm: React.FC = () => {
   return (
     <section id="contacts" className="m-2 pt-20">
       <h2 className="text-4xl">Contacts</h2>

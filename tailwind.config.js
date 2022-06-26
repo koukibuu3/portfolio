@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./pages/**/*', './components/**/*'],
+  content: ['src/**/*'],
   theme: {
     container: {
       padding: {

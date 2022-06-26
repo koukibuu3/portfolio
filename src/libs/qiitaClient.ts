@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { Article, QiitaItem } from '../types'
+import { Article, QiitaItem } from '~/types'
 
 const fetch = async (): Promise<QiitaItem[]> => {
   const res = await axios

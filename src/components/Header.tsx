@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FaBars } from 'react-icons/fa'
 
-const Header: React.VFC = () => {
+const Header: React.FC = () => {
   return (
     <header className="flex justify-between text-xl text-gray-600">
       <span className="flex items-center">

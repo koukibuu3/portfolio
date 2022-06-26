@@ -1,4 +1,4 @@
-import { Page as PageType } from '../types'
+import { Page as PageType } from '~/types'
 
 class Page {
   private currentPage: number
