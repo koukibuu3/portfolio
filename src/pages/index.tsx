@@ -5,6 +5,7 @@ import Head from 'next/head'
 import {
   Articles,
   ContactForm,
+  CustomHead,
   Footer,
   Header,
   Introduce,
@@ -17,17 +18,14 @@ import { Article, Portfolio, Page } from '~/types'
 const PER_PAGE = 10
 
 type Props = {
-  portfolio: Portfolio
   articles: Article[]
   page: Page
 }
 
-const Home: NextPage<Props> = ({ portfolio, articles, page }) => {
+const Home: NextPage<Props> = ({ articles, page }) => {
   return (
     <>
-      <Head>
-        <title>Engineer&lsquo;s Blog | {portfolio.title}</title>
-      </Head>
+      <CustomHead />
 
       <div className="container text-gray-600 mx-auto my-2">
         <Header />
@@ -48,13 +46,10 @@ const Home: NextPage<Props> = ({ portfolio, articles, page }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const portfolio = await cmsClient.get<Portfolio>({
-    endpoint: 'portfolio',
-  })
   const [articles, page] = await client.getArticlesWithPagination(0, PER_PAGE)
 
   return {
-    props: { portfolio, articles, page },
+    props: { articles, page },
   }
 }
 

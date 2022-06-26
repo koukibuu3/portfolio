@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import { Articles, Footer, Header } from '~/components'
+import { Articles, CustomHead, Footer, Header } from '~/components'
 import { Pagination } from '~/components'
 import { client } from '~/libs'
 import { Article, Page } from '~/types'
@@ -12,12 +12,15 @@ const Page: NextPage<{ articles: Article[]; page: Page }> = ({
   page,
 }) => {
   return (
-    <div className="container text-gray-600 mx-auto my-2">
-      <Header />
-      <Articles articles={articles} />
-      <Pagination page={page} />
-      <Footer />
-    </div>
+    <>
+      <CustomHead page={page.currentPage} />
+      <div className="container text-gray-600 mx-auto my-2">
+        <Header />
+        <Articles articles={articles} />
+        <Pagination page={page} />
+        <Footer />
+      </div>
+    </>
   )
 }
 
