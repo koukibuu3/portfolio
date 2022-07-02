@@ -21,6 +21,7 @@
     "rss-parser": "3.12.0"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "0.4.0",
     "@types/eslint": "8.4.3",
     "@types/node": "16.11.10",
     "@types/prettier": "2.6.3",
