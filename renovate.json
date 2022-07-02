@@ -1,6 +1,49 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
+  "reviewers": ["@koukibuu3"],
+  "labels": ["dependencies"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["before 9:00 am on the first day of the month"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor"],
+      "groupName": "dependencies (minor)",
+      "groupSlug": "minor-deps"
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["patch"],
+      "groupName": "dependencies (patch)",
+      "groupSlug": "patch-deps",
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "devDependencies",
+      "groupSlug": "major-dev-deps"
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor"],
+      "groupName": "devDependencies (minor)",
+      "groupSlug": "minor-dev-deps"
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch"],
+      "groupName": "devDependencies (patch)",
+      "groupSlug": "patch-dev-deps",
+      "automerge": true
+    }
   ]
 }
