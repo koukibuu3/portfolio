@@ -1,6 +1,7 @@
 type Article = {
   id: string
   title: string
+  description: string
   body: string
   url: string
   type: 'qiita' | 'zenn'
