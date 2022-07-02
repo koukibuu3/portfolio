@@ -14,14 +14,19 @@ const Articles: React.FC<Props> = ({ articles }) => {
     <section id="articles" className="mt-16">
       <ul className="grid grid-cols-2 gap-4 my-6 lg:mx-5">
         {articles.map((article) => (
-          <li className="col-span-2 lg:col-span-1" key={article.id}>
+          <li className="col-span-2 sm:col-span-1" key={article.id}>
             <a href={article.url} target="_blank" rel="noreferrer">
-              <div className="bg-gray-100 hover:bg-gray-200 rounded-lg h-28 py-4 px-6">
+              <div className="bg-gray-100 hover:bg-gray-200 rounded-lg py-4 px-6">
                 <time className="block h-4 text-gray-500 text-right text-xs my-1">
                   {dayjs(article.created_at).format('YYYY/MM/DD')}
                 </time>
-                <h3 className="text-lg my-1 truncate">{article.title}</h3>
-                <div className="flex items-center text-gray-500 text-xs my-2">
+                <h3 className="text-lg h-14 my-2 line-clamp-2">
+                  {article.title}
+                </h3>
+                <p className="text-xs text-gray-500 h-12 ml-3 my-2 line-clamp-3">
+                  {article.description}
+                </p>
+                <div className="flex items-center text-gray-500 text-xs my-1">
                   <div className="h-4 w-4">
                     <Image
                       src={`/img/${article.type}.png`}
