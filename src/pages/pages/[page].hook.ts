@@ -1,14 +1,12 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
 import { client } from '~/libs'
+import { range } from '~/utils'
 
 const PER_PAGE = 10
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await client.getArticles()
-
-  const range = (start: number, end: number) =>
-    [...Array(end - start + 1)].map((_, i) => start + i)
 
   const paths = range(1, Math.ceil(articles.length / PER_PAGE)).map(
     (i) => `/pages/${i}`
