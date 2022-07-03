@@ -21,16 +21,6 @@ const Header: React.FC = () => {
           </span>
         </h1>
       </span>
-      <button className="lg:hidden mx-2 my-6">
-        <FaBars />
-      </button>
-      <nav className="hidden lg:flex items-center m-2">
-        <ul>
-          <li>
-            <button>Articles</button>
-          </li>
-        </ul>
-      </nav>
     </header>
   )
 }
