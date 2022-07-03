@@ -13,6 +13,10 @@
 /out/
 next-env.d.ts
 
+# sitemap
+**/sitemap*.xml
+**/robots.txt
+
 # production
 /build
 
