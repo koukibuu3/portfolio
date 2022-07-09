@@ -1,18 +1,16 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type { NextPage } from 'next'
 
 import { CustomHead, Footer, Header, Pagination } from '~/components'
 import { ArticleList } from '~/components/article'
-import { client } from '~/libs'
+import { getStaticProps } from '~/pages/index.hook'
 import { Article, Page } from '~/types'
-
-const PER_PAGE = 10
 
 type Props = {
   articles: Article[]
   page: Page
 }
 
-const Home: NextPage<Props> = ({ articles, page }) => {
+const IndexPage: NextPage<Props> = ({ articles, page }) => {
   return (
     <>
       <CustomHead />
@@ -28,12 +26,6 @@ const Home: NextPage<Props> = ({ articles, page }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const [articles, page] = await client.getArticlesWithPagination(0, PER_PAGE)
+export default IndexPage
 
-  return {
-    props: { articles, page },
-  }
-}
-
-export default Home
+export { getStaticProps }
