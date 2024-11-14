@@ -15,14 +15,12 @@ const Header: React.FC = () => {
           width={70}
         />
         <h1 className="mx-4 lg:mx-6">
-          <Link href={'/'}>
-            <a className="hover:text-orange-600">
-              Engineer&lsquo;s Blog
-              <span className="hidden sm:inline">
-                <span className="border-r border-gray-600 mx-4" />
-                koukibuu3
-              </span>
-            </a>
+          <Link href={'/'} className="hover:text-orange-600">
+            Engineer&lsquo;s Blog
+            <span className="hidden sm:inline">
+              <span className="border-r border-gray-600 mx-4" />
+              koukibuu3
+            </span>
           </Link>
         </h1>
       </span>
