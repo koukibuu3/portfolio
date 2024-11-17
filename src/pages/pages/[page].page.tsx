@@ -1,7 +1,8 @@
 import { NextPage } from 'next'
 
-import { CustomHead, Footer, Header } from '~/components'
+import { CustomHead, Footer } from '~/components'
 import { Pagination } from '~/components'
+import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { ArticleList } from '~/components/article'
 import { getStaticPaths, getStaticProps } from '~/pages/pages/[page].hook'
 import { Article, Page } from '~/types'
@@ -15,8 +16,8 @@ const PagePage: NextPage<Props> = ({ articles, page }) => {
   return (
     <>
       <CustomHead page={page.currentPage} />
-      <div className="container text-gray-600 mx-auto my-2">
-        <Header />
+      <div className="text-gray-600 mx-auto my-2">
+        <GlobalNavigation />
         <ArticleList articles={articles} />
         <Pagination page={page} />
         <Footer />
