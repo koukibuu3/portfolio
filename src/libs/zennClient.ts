@@ -1,19 +1,19 @@
 import Parser from 'rss-parser'
 
-import { Article, ZennFeed, ZennItem } from '~/types'
+import { Note, ZennFeed, ZennItem } from '~/types'
 
 const fetch = async (): Promise<ZennItem[]> => {
   const res = await new Parser<ZennFeed, ZennItem>().parseURL(
-    `https://zenn.dev/${process.env.ZENN_USER_ID}/feed`
+    `https://zenn.dev/${process.env.ZENN_USER_ID}/feed`,
   )
   return res.items
 }
 
 const zennClient = {
-  getArticles: async (): Promise<Article[]> => {
+  getAll: async (): Promise<Note[]> => {
     const zennItems = await fetch()
     return zennItems.map(
-      (zennItem): Article => ({
+      (zennItem): Note => ({
         id: zennItem.link.replace(/^.+articles\//, ''),
         title: zennItem.title,
         description: zennItem.content.slice(0, 100),
@@ -22,7 +22,7 @@ const zennClient = {
         type: 'zenn',
         created_at: zennItem.pubDate,
         updated_at: zennItem.pubDate,
-      })
+      }),
     )
   },
 }
