@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 
-import { CustomHead, Footer, Header, Pagination } from '~/components'
+import { CustomHead, Footer, Pagination } from '~/components'
+import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { ArticleList } from '~/components/article'
 import { getStaticProps } from '~/pages/index.hook'
 import { Article, Page } from '~/types'
@@ -15,8 +16,8 @@ const IndexPage: NextPage<Props> = ({ articles, page }) => {
     <>
       <CustomHead />
 
-      <div className="container text-gray-600 mx-auto my-2">
-        <Header />
+      <div className="text-gray-600 mx-auto">
+        <GlobalNavigation />
         <ArticleList articles={articles} />
         <Pagination page={page} />
       </div>
