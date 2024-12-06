@@ -1,5 +1,5 @@
 export type { default as Account } from './Account'
-export type { default as Article } from './Article'
+export type { default as Knowledge } from './Knowledge'
 export type { default as Portfolio } from './Portfolio'
 export type { default as QiitaItem } from './QiitaItem'
 export type { default as Skill } from './Skill'

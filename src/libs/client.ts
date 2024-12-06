@@ -1,41 +1,43 @@
 import dayjs from 'dayjs'
 
 import { zennClient, qiitaClient } from '~/libs'
-import { Article, Page as PageType } from '~/types'
+import { Knowledge, Page as PageType } from '~/types'
 import { Page } from '~/valueObjects'
 
 const PER_PAGE = 10
 
 /** 記事を作成日の降順にソートする */
-const sortArticles = (articles: Article[]): Article[] => {
-  return articles.sort((a, b) =>
-    dayjs(a.created_at).isAfter(b.created_at) ? -1 : 1
+const sortKnowledges = (knowledgeList: Knowledge[]): Knowledge[] => {
+  return knowledgeList.sort((a, b) =>
+    dayjs(a.created_at).isAfter(b.created_at) ? -1 : 1,
   )
 }
 
 const client = {
-  getArticles: async (): Promise<Article[]> => {
-    const qiitaArticles = await qiitaClient.getArticles()
-    const zennArticles = await zennClient.getArticles()
+  getAll: async (): Promise<Knowledge[]> => {
+    const qiitaKnowledges = await qiitaClient.getAll()
+    const zennKnowledges = await zennClient.getAll()
 
-    return sortArticles(qiitaArticles.concat(zennArticles))
+    return sortKnowledges(qiitaKnowledges.concat(zennKnowledges))
   },
-  getArticlesWithPagination: async (
+  getAllWithPagination: async (
     offset = 0,
-    limit = 0
-  ): Promise<[Article[], PageType]> => {
-    const qiitaArticles = await qiitaClient.getArticles()
-    const zennArticles = await zennClient.getArticles()
+    limit = 0,
+  ): Promise<[Knowledge[], PageType]> => {
+    const qiitaKnowledges = await qiitaClient.getAll()
+    const zennKnowledges = await zennClient.getAll()
 
-    const sortedArticles = sortArticles(qiitaArticles.concat(zennArticles))
-    const articles =
+    const sortedKnowledges = sortKnowledges(
+      qiitaKnowledges.concat(zennKnowledges),
+    )
+    const knowledgeList =
       limit === undefined
-        ? sortedArticles.slice(offset)
-        : sortedArticles.slice(offset, offset + limit)
+        ? sortedKnowledges.slice(offset)
+        : sortedKnowledges.slice(offset, offset + limit)
 
-    const page = new Page(offset, limit, sortedArticles.length).toObject()
+    const page = new Page(offset, limit, sortedKnowledges.length).toObject()
 
-    return [articles, page]
+    return [knowledgeList, page]
   },
 }
 

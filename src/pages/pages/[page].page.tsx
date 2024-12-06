@@ -3,22 +3,22 @@ import { NextPage } from 'next'
 import { CustomHead, Footer } from '~/components'
 import { Pagination } from '~/components'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
-import { ArticleList } from '~/components/article'
+import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { getStaticPaths, getStaticProps } from '~/pages/pages/[page].hook'
-import { Article, Page } from '~/types'
+import { Knowledge, Page } from '~/types'
 
 type Props = {
-  articles: Article[]
+  knowledgeList: Knowledge[]
   page: Page
 }
 
-const PagePage: NextPage<Props> = ({ articles, page }) => {
+const PagePage: NextPage<Props> = ({ knowledgeList, page }) => {
   return (
     <>
       <CustomHead page={page.currentPage} />
       <div className="text-gray-600 mx-auto my-2">
         <GlobalNavigation />
-        <ArticleList articles={articles} />
+        <KnowledgeList knowledgeList={knowledgeList} />
         <Pagination page={page} />
         <Footer />
       </div>
