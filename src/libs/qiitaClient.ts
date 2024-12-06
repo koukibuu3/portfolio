@@ -1,5 +1,4 @@
 import axios from 'axios'
-import removeMarkdown from 'remove-markdown'
 
 import { Knowledge, QiitaItem } from '~/types'
 
@@ -23,7 +22,6 @@ const qiitaClient = {
       (qiitaItem): Knowledge => ({
         id: qiitaItem.id,
         title: qiitaItem.title,
-        description: removeMarkdown(qiitaItem.body).slice(0, 100),
         body: qiitaItem.body,
         url: qiitaItem.url,
         type: 'qiita',

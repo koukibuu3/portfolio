@@ -18,9 +18,6 @@ export const KnowledgeItem: React.FC<Props> = ({ knowledge }) => {
             {dayjs(knowledge.created_at).format('YYYY/MM/DD')}
           </time>
           <h3 className="text-lg h-14 my-2 line-clamp-2">{knowledge.title}</h3>
-          <p className="text-xs text-gray-500 h-12 ml-3 my-2 line-clamp-3">
-            {knowledge.description}
-          </p>
           <div className="flex items-center text-gray-500 text-xs my-1">
             <div className="h-4 w-4">
               <Image

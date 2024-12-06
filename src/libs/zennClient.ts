@@ -16,7 +16,6 @@ const zennClient = {
       (zennItem): Knowledge => ({
         id: zennItem.link.replace(/^.+articles\//, ''),
         title: zennItem.title,
-        description: zennItem.content.slice(0, 100),
         body: zennItem.content,
         url: zennItem.link,
         type: 'zenn',
