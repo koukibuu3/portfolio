@@ -2,23 +2,23 @@ import type { NextPage } from 'next'
 
 import { CustomHead, Footer, Pagination } from '~/components'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
-import { ArticleList } from '~/components/article'
+import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { getStaticProps } from '~/pages/index.hook'
-import { Article, Page } from '~/types'
+import { Knowledge, Page } from '~/types'
 
 type Props = {
-  articles: Article[]
+  knowledgeList: Knowledge[]
   page: Page
 }
 
-const IndexPage: NextPage<Props> = ({ articles, page }) => {
+const IndexPage: NextPage<Props> = ({ knowledgeList, page }) => {
   return (
     <>
       <CustomHead />
 
       <div className="text-gray-600 mx-auto">
         <GlobalNavigation />
-        <ArticleList articles={articles} />
+        <KnowledgeList knowledgeList={knowledgeList} />
         <Pagination page={page} />
       </div>
 

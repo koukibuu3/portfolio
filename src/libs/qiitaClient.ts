@@ -1,7 +1,6 @@
 import axios from 'axios'
-import removeMarkdown from 'remove-markdown'
 
-import { Article, QiitaItem } from '~/types'
+import { Knowledge, QiitaItem } from '~/types'
 
 const fetch = async (): Promise<QiitaItem[]> => {
   const res = await axios
@@ -17,19 +16,18 @@ const fetch = async (): Promise<QiitaItem[]> => {
 }
 
 const qiitaClient = {
-  getArticles: async (): Promise<Article[]> => {
+  getAll: async (): Promise<Knowledge[]> => {
     const qiitaItems = await fetch()
     return qiitaItems.map(
-      (qiitaItem): Article => ({
+      (qiitaItem): Knowledge => ({
         id: qiitaItem.id,
         title: qiitaItem.title,
-        description: removeMarkdown(qiitaItem.body).slice(0, 100),
         body: qiitaItem.body,
         url: qiitaItem.url,
         type: 'qiita',
         created_at: qiitaItem.created_at,
         updated_at: qiitaItem.updated_at,
-      })
+      }),
     )
   },
 }

@@ -1,7 +1,6 @@
-type Article = {
+type Knowledge = {
   id: string
   title: string
-  description: string
   body: string
   url: string
   type: 'qiita' | 'zenn'
@@ -9,4 +8,4 @@ type Article = {
   updated_at?: string
 }
 
-export default Article
+export default Knowledge
