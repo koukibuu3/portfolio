@@ -1,7 +1,8 @@
 import { NextPage } from 'next'
 
-import { CustomHead, Footer } from '~/components'
+import { CustomHead } from '~/components'
 import { Pagination } from '~/components'
+import { Copyright } from '~/components/Copyright/Copyright'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { getStaticPaths, getStaticProps } from '~/pages/pages/[page].hook'
@@ -20,8 +21,8 @@ const PagePage: NextPage<Props> = ({ knowledgeList, page }) => {
         <GlobalNavigation />
         <KnowledgeList knowledgeList={knowledgeList} />
         <Pagination page={page} />
-        <Footer />
       </div>
+      <Copyright />
     </>
   )
 }

@@ -1,6 +1,5 @@
 export { default as Accounts } from './Accounts'
 export { default as CustomHead } from './CustomHead'
-export { default as Footer } from './Footer'
 export { default as GoogleAnalytics } from './GoogleAnalytics'
 export { default as Introduce } from './Introduce'
 export { default as Skills } from './Skills'
