@@ -1,4 +1,5 @@
 export type { default as Account } from './Account'
+export * from './ArticleTag'
 export type { default as Knowledge } from './Knowledge'
 export type { default as Portfolio } from './Portfolio'
 export type { default as QiitaItem } from './QiitaItem'
