@@ -8,6 +8,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const [knowledgeList, page] = await client.getAllWithPagination(0, PER_PAGE)
 
   return {
-    props: { knowledgeList, page },
+    props: {
+      knowledgeList,
+      page,
+      environment: process.env.ENVIRONMENT ?? null,
+    },
   }
 }
