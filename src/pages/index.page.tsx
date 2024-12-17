@@ -66,8 +66,6 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
       { name: 'Twitter', url: 'https://x.com/koukibuu3' },
       { name: 'Qiita', url: 'https://qiita.com/koukibuu3' },
       { name: 'Zenn', url: 'https://zenn.dev/koukibuu3' },
-      { name: 'Lapras', url: 'https://lapras.com/public/koukibuu3' },
-      { name: 'YOUTRUST', url: 'https://youtrust.jp/users/koukibuu3' },
     ],
   }
 
