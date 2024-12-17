@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 
 import { CustomHead, Pagination } from '~/components'
+import { About } from '~/components/About'
 import { ArticleList } from '~/components/Article/ArticleList'
 import { Copyright } from '~/components/Copyright/Copyright'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { Section, SectionTitle } from '~/components/Section'
 import { getStaticProps } from '~/pages/index.hook'
-import { Knowledge, Page } from '~/types'
+import { Knowledge, Page, Profile } from '~/types'
 
 type Props = {
   knowledgeList: Knowledge[]
@@ -55,6 +56,21 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
         ]
       : []
 
+  const profile: Profile = {
+    name: 'Kouki Akasaka',
+    id: 'koukibuu3',
+    description: '都内在住Webエンジニア',
+    imageUrl: '/img/logo.svg',
+    links: [
+      { name: 'GitHub', url: 'https://github.com/koukibuu3' },
+      { name: 'Twitter', url: 'https://x.com/koukibuu3' },
+      { name: 'Qiita', url: 'https://qiita.com/koukibuu3' },
+      { name: 'Zenn', url: 'https://zenn.dev/koukibuu3' },
+      { name: 'Lapras', url: 'https://lapras.com/public/koukibuu3' },
+      { name: 'YOUTRUST', url: 'https://youtrust.jp/users/koukibuu3' },
+    ],
+  }
+
   return (
     <>
       <CustomHead />
@@ -70,9 +86,13 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
         <Section id="knowledge">
           <SectionTitle title="Knowledge" subTitle="技術メモ" />
           <KnowledgeList knowledgeList={knowledgeList} />
+          <Pagination page={page} />
         </Section>
 
-        <Pagination page={page} />
+        <Section id="about">
+          <SectionTitle title="About" subTitle="プロフィール" />
+          <About profile={profile} />
+        </Section>
       </div>
 
       <Copyright />
