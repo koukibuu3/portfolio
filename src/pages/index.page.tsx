@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 
 import { CustomHead, Pagination } from '~/components'
 import { About } from '~/components/About'
@@ -8,7 +9,7 @@ import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { Section, SectionTitle } from '~/components/Section'
 import { getStaticProps } from '~/pages/index.hook'
-import { Knowledge, Page, Profile } from '~/types'
+import { Knowledge, Page, Article, Profile } from '~/types'
 
 type Props = {
   knowledgeList: Knowledge[]
@@ -17,7 +18,7 @@ type Props = {
 }
 
 const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
-  const articles =
+  const [articles, setArticles] = useState<Article[]>(
     environment !== 'production'
       ? [
           {
@@ -54,7 +55,12 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
             publishedAt: '2024-12-14',
           },
         ]
-      : []
+      : [],
+  )
+
+  const fetchMore = () => {
+    setArticles([...articles, ...articles]) // FIXME
+  }
 
   const profile: Profile = {
     name: 'Kouki Akasaka',
@@ -78,7 +84,7 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
 
         <Section id="article">
           <SectionTitle title="Article" subTitle="記事" />
-          <ArticleList articles={articles} />
+          <ArticleList articles={articles} fetchMore={fetchMore} />
         </Section>
 
         <Section id="knowledge">
