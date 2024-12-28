@@ -4,5 +4,5 @@ module.exports = {
   images: {
     domains: ['images.microcms-assets.io'],
   },
-  pageExtensions: ['page.tsx'],
+  pageExtensions: ['page.tsx', 'api.ts'],
 }
