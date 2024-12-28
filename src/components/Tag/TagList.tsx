@@ -1,9 +1,9 @@
 import { TagItem } from './TagItem'
 
-import { ArticleTag } from '~/types'
+import { Tag } from '~/types'
 
 type Props = {
-  tags?: ArticleTag[]
+  tags?: Tag[]
 }
 
 export const TagList: React.FC<Props> = ({ tags }) => {

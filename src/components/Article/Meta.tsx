@@ -1,10 +1,10 @@
 import dayjs from 'dayjs'
 
 import { TagList } from '~/components/Tag/TagList'
-import { ArticleTag as ArticleTagType } from '~/types/ArticleTag'
+import { Tag as TagType } from '~/types/Tag'
 
 type Props = {
-  tags?: ArticleTagType[]
+  tags?: TagType[]
   publishedAt: string
 }
 
