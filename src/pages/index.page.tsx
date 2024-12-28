@@ -9,27 +9,14 @@ import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { Section, SectionTitle } from '~/components/Section'
 import { useArticle } from '~/hooks/useArticle'
 import { getStaticProps, Props } from '~/pages/index.hook'
-import { Profile } from '~/types'
 
 const IndexPage: NextPage<Props> = ({
   defaultArticles,
   knowledgeList,
   page,
+  profile,
 }) => {
   const { articles, fetchMore, hasMore } = useArticle(defaultArticles)
-
-  const profile: Profile = {
-    name: 'Kouki Akasaka',
-    id: 'koukibuu3',
-    description: '都内在住Webエンジニア',
-    imageUrl: '/img/logo.svg',
-    links: [
-      { name: 'GitHub', url: 'https://github.com/koukibuu3' },
-      { name: 'Twitter', url: 'https://x.com/koukibuu3' },
-      { name: 'Qiita', url: 'https://qiita.com/koukibuu3' },
-      { name: 'Zenn', url: 'https://zenn.dev/koukibuu3' },
-    ],
-  }
 
   return (
     <>
