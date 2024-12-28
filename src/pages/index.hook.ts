@@ -2,7 +2,8 @@ import type { GetStaticProps } from 'next'
 
 import { client, microCmsClient } from '~/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
-import { Article, Knowledge, Page } from '~/types'
+import { ProfileRepository } from '~/modules/repositories/ProfileRepository'
+import { Article, Knowledge, Page, Profile } from '~/types'
 
 const PER_PAGE = 3
 
@@ -10,6 +11,7 @@ export type Props = {
   defaultArticles: Article[]
   knowledgeList: Knowledge[]
   page: Page
+  profile: Profile
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -18,12 +20,14 @@ export const getStaticProps: GetStaticProps = async () => {
     0,
     PER_PAGE,
   )
+  const profile = await new ProfileRepository(microCmsClient).get()
 
   return {
     props: {
       defaultArticles,
       knowledgeList,
       page,
+      profile,
     },
   }
 }
