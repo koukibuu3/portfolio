@@ -6,9 +6,14 @@ import { Article } from '~/types'
 type Props = {
   articles: Article[]
   fetchMore: () => void
+  hasMore: boolean
 }
 
-export const ArticleList: React.FC<Props> = ({ articles, fetchMore }) => {
+export const ArticleList: React.FC<Props> = ({
+  articles,
+  fetchMore,
+  hasMore,
+}) => {
   if (articles.length === 0) {
     return <p className="text-sm mt-6 mx-auto w-32">記事がありません</p>
   }
@@ -18,7 +23,7 @@ export const ArticleList: React.FC<Props> = ({ articles, fetchMore }) => {
       {articles.map((article) => (
         <ArticleItem key={article.id} article={article} />
       ))}
-      <MoreLink action={fetchMore} />
+      <MoreLink action={fetchMore} disabled={!hasMore} />
     </ul>
   )
 }

@@ -1,9 +1,9 @@
 import { FaTag } from 'react-icons/fa6'
 
-import { ArticleTag } from '~/types'
+import { Tag } from '~/types'
 
 type Props = {
-  tag: ArticleTag
+  tag: Tag
 }
 
 export const TagItem: React.FC<Props> = ({ tag }) => {
