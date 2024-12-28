@@ -8,14 +8,14 @@ export class ArticleRepository {
     this.client = client
   }
 
-  async getAll(): Promise<Article[]> {
+  async get(page: number, perPage: number): Promise<Article[]> {
     if (process.env.ENVIRONMENT === 'production') {
       return [] // 開発中は本番で値を返さない
     }
 
     const res = await this.client.getList<ArticleWithoutDescription>({
       endpoint: 'articles',
-      queries: { limit: 100 },
+      queries: { offset: page * perPage, limit: perPage },
     })
 
     return res.contents.map((content) => ({
