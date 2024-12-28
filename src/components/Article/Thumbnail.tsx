@@ -6,7 +6,6 @@ type Props = {
 }
 
 export const Thumbnail: React.FC<Props> = ({ url, alt }) => {
-  console.log(url)
   return (
     <div className="relative w-full h-52">
       <Image src={url} alt={alt} className="object-cover rounded-md" fill />

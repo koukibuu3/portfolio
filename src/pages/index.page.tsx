@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
 
 import { CustomHead, Pagination } from '~/components'
 import { About } from '~/components/About'
@@ -8,59 +7,16 @@ import { Copyright } from '~/components/Copyright/Copyright'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
 import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { Section, SectionTitle } from '~/components/Section'
-import { getStaticProps } from '~/pages/index.hook'
-import { Knowledge, Page, Article, Profile } from '~/types'
+import { useArticle } from '~/hooks/useArticle'
+import { getStaticProps, Props } from '~/pages/index.hook'
+import { Profile } from '~/types'
 
-type Props = {
-  knowledgeList: Knowledge[]
-  page: Page
-  environment: string
-}
-
-const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
-  const [articles, setArticles] = useState<Article[]>(
-    environment !== 'production'
-      ? [
-          {
-            id: '1',
-            title: 'とってもかわいいまめちゃんの記事です',
-            description:
-              'まめちゃんはとってもかわいいです。何が可愛いかというととにかくかわいいんです。かわいいったら可愛いんです。だから、かわいいって言ってんでしょうが。かわいいというのですはね、',
-            tags: [
-              { id: '1', name: '猫' },
-              { id: '2', name: '天使' },
-            ],
-            mainImageUrl: '/img/sample-thumbnail.jpg',
-            publishedAt: '2024-12-14',
-          },
-          {
-            id: '2',
-            title: 'とってもかわいいまめちゃんの記事です',
-            description:
-              'まめちゃんはとってもかわいいです。何が可愛いかというととにかくかわいいんです。かわいいったら可愛いんです。だから、かわいいというのですはね、なんだっけかな、えーっと',
-            tags: [],
-            mainImageUrl: '/img/sample-thumbnail.jpg',
-            publishedAt: '2024-12-14',
-          },
-          {
-            id: '3',
-            title: 'とってもかわいいまめちゃんの記事です',
-            description:
-              'まめちゃんはとってもかわいいです。何が可愛いかというととにかくかわいいんです。かわいいったら可愛いんです。だから、かわいいというのですはね、つまるところ、かわいいんです。',
-            tags: [
-              { id: '1', name: '猫' },
-              { id: '2', name: '天使' },
-            ],
-            mainImageUrl: '/img/sample-thumbnail.jpg',
-            publishedAt: '2024-12-14',
-          },
-        ]
-      : [],
-  )
-
-  const fetchMore = () => {
-    setArticles([...articles, ...articles]) // FIXME
-  }
+const IndexPage: NextPage<Props> = ({
+  defaultArticles,
+  knowledgeList,
+  page,
+}) => {
+  const { articles, fetchMore, hasMore } = useArticle(defaultArticles)
 
   const profile: Profile = {
     name: 'Kouki Akasaka',
@@ -84,7 +40,11 @@ const IndexPage: NextPage<Props> = ({ knowledgeList, page, environment }) => {
 
         <Section id="article">
           <SectionTitle title="Article" subTitle="記事" />
-          <ArticleList articles={articles} fetchMore={fetchMore} />
+          <ArticleList
+            articles={articles}
+            fetchMore={fetchMore}
+            hasMore={hasMore}
+          />
         </Section>
 
         <Section id="knowledge">

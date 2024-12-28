@@ -5,7 +5,7 @@ type Props = {
 }
 
 /** 記事の説明文章の最大文字数 */
-const MAX_DESCRIPTION_LENGTH = 65
+const MAX_DESCRIPTION_LENGTH = 80
 
 export const Description: React.FC<Props> = ({ description }) => {
   return (
