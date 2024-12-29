@@ -15,10 +15,6 @@ export class ArticleRepository {
    * @returns 記事の配列
    */
   async getWithPagination(page: number, perPage: number): Promise<Article[]> {
-    if (process.env.ENVIRONMENT === 'production') {
-      return [] // 開発中は本番で値を返さない
-    }
-
     const res = await this.client.getList<ArticleWithoutDescription>({
       endpoint: 'articles',
       queries: { offset: page * perPage, limit: perPage },
