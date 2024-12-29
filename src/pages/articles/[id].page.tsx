@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import Error from 'next/error'
 import Image from 'next/image'
 
 import { getStaticPaths, getStaticProps } from './[id].hook'
@@ -14,6 +15,7 @@ type Props = {
 }
 
 const ArticlePage: NextPage<Props> = ({ article }) => {
+  if (!article) return <Error statusCode={404} />
   return (
     <>
       <CustomHead />

@@ -33,13 +33,17 @@ export class ArticleRepository {
   /**
    * 記事をIDで単体取得する
    * @param id 記事のID
+   * @param draftKey ドラフトキー
    * @returns 記事
    */
-  async getById(id: string): Promise<Article> {
-    const res = await this.client.get<Article>({
-      endpoint: 'articles',
-      contentId: id,
-    })
+  async getById(id: string, draftKey?: string): Promise<Article | null> {
+    const res = await this.client
+      .get<Article>({
+        endpoint: 'articles',
+        contentId: id,
+        queries: { draftKey },
+      })
+      .catch((error) => null)
 
     return res
   }

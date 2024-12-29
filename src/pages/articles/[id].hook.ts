@@ -10,7 +10,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = articles.map((article) => `/articles/${article.id}`)
 
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -22,6 +22,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const article = await new ArticleRepository(microCmsClient).getById(
     context.params.id,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    context.previewData?.draftKey,
   )
 
   return {
