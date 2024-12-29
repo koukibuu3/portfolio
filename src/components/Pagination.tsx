@@ -6,7 +6,7 @@ import { Page } from '~/types'
 
 const Pagination: React.FC<{ page: Page }> = ({ page }) => {
   return (
-    <nav className="flex text-sm items-center text-center lg:mx-5">
+    <nav className="flex text-sm items-center text-center mx-4">
       {page.previousPage ? (
         <Link
           href={`/pages/${page.previousPage}`}
@@ -40,7 +40,7 @@ const Pagination: React.FC<{ page: Page }> = ({ page }) => {
                   {item}
                 </Link>
               </li>
-            )
+            ),
           )}
         </span>
       </ul>
@@ -51,12 +51,12 @@ const Pagination: React.FC<{ page: Page }> = ({ page }) => {
           className="inline-flex hover:text-orange-600"
         >
           Next
-          <HiOutlineChevronRight className="mx-1" size="1.3em" />
+          <HiOutlineChevronRight className="ml-1" size="1.3em" />
         </Link>
       ) : (
         <span className="inline-flex text-gray-300 cursor-default">
           Next
-          <HiOutlineChevronRight className="mx-1" size="1.3em" />
+          <HiOutlineChevronRight className="mr-1" size="1.3em" />
         </span>
       )}
     </nav>

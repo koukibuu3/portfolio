@@ -10,7 +10,7 @@ type Props = {
 
 export const KnowledgeList: React.FC<Props> = ({ knowledgeList }) => {
   return (
-    <ul className="grid grid-cols-2 gap-3 m-4">
+    <ul className="grid grid-cols-3 gap-3 m-4">
       {knowledgeList.map((knowledge) => (
         <KnowledgeItem key={knowledge.id} knowledge={knowledge} />
       ))}

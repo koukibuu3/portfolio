@@ -19,7 +19,7 @@ export const ArticleList: React.FC<Props> = ({
   }
 
   return (
-    <ul className="grid grid-cols-2 gap-10 m-4">
+    <ul className="grid grid-cols-3 gap-10 m-4">
       {articles.map((article) => (
         <ArticleItem key={article.id} article={article} />
       ))}
