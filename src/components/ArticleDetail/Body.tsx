@@ -9,7 +9,7 @@ type Props = {
 export const Body = ({ article }: Props) => {
   return (
     <article
-      className={`${styles.article} mt-16 mx-4 text-gray-700 prose`}
+      className={`${styles.article} mt-16 text-gray-700 prose mx-4 md:mx-auto max-w-screen-md`}
       dangerouslySetInnerHTML={{ __html: article.body }}
     />
   )

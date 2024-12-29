@@ -11,7 +11,7 @@ type Props = {
 
 export const ArticleItem: React.FC<Props> = ({ article }) => {
   return (
-    <li key={article.id} className="col-span-2 sm:col-span-1">
+    <li key={article.id} className="col-span-3 sm:col-span-1">
       <a
         href={`/articles/${article.id}`}
         className="flex flex-col gap-2 w-full"

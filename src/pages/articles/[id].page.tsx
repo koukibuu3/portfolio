@@ -20,7 +20,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
     <>
       <CustomHead />
 
-      <div className="text-gray-600 mx-auto mt-16">
+      <div className="text-gray-600 mx-auto mt-16 max-w-screen-md">
         <GlobalNavigation />
 
         <Image
@@ -28,10 +28,10 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
           alt="記事のタイトル画像"
           width={article.mainImage.width}
           height={article.mainImage.height}
-          className="w-full"
+          className="w-full rounded-none md:rounded-md"
         />
 
-        <div className="m-4 mb-16">
+        <div className="m-4 mb-16 mx-4 md:mx-auto">
           <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
           <Meta tags={article.tags} publishedAt={article.publishedAt} />
         </div>

@@ -22,7 +22,7 @@ const IndexPage: NextPage<Props> = ({
     <>
       <CustomHead />
 
-      <div className="text-gray-600 mx-auto">
+      <div className="text-gray-600 mx-auto max-w-screen-xl">
         <GlobalNavigation />
 
         <Section id="article">

@@ -5,7 +5,7 @@ import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 import { ProfileRepository } from '~/modules/repositories/ProfileRepository'
 import { Article, Knowledge, Page, Profile } from '~/types'
 
-const PER_PAGE = 3
+const PER_PAGE = 9
 
 export type Props = {
   defaultArticles: Article[]

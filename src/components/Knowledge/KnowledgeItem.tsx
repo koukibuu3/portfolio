@@ -11,7 +11,7 @@ type Props = {
 
 export const KnowledgeItem: React.FC<Props> = ({ knowledge }) => {
   return (
-    <li className="col-span-2 sm:col-span-1" key={knowledge.id}>
+    <li className="col-span-3 sm:col-span-1" key={knowledge.id}>
       <a href={knowledge.url} target="_blank" rel="noreferrer">
         <div className="bg-gray-100 hover:bg-gray-200 rounded-md py-3 px-6">
           <time className="block h-4 text-right text-xs">
