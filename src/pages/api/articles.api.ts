@@ -9,10 +9,10 @@ export default async function handler(
 ) {
   if (req.method === 'GET') {
     const { page, perPage } = req.query
-    const articles = await new ArticleRepository(microCmsClient).get(
-      Number(page),
-      Number(perPage),
-    )
+    const articles = await new ArticleRepository(
+      microCmsClient,
+    ).getWithPagination(Number(page), Number(perPage))
+
     res.status(200).json(articles)
   } else {
     res.status(405).json({ message: 'Method not allowed' })

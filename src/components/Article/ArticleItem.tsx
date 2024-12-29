@@ -12,7 +12,10 @@ type Props = {
 export const ArticleItem: React.FC<Props> = ({ article }) => {
   return (
     <li key={article.id} className="col-span-2 sm:col-span-1">
-      <a href={`/article/${article.id}`} className="flex flex-col gap-2 w-full">
+      <a
+        href={`/articles/${article.id}`}
+        className="flex flex-col gap-2 w-full"
+      >
         <Thumbnail url={article.mainImage.url} alt={article.title} />
         <Title title={article.title} />
         <Meta tags={article.tags} publishedAt={article.publishedAt} />
