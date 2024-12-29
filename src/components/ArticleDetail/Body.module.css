@@ -1,0 +1,69 @@
+/* .article {
+  margin: 0 1rem;
+} */
+
+.article h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid #505050;
+}
+
+.article h3 {
+  margin: 1.5rem 0;
+}
+
+.article h4 {
+  margin: 1.25rem 0;
+}
+
+.article pre {
+  margin: 0 -1rem;
+  padding: 2rem 1rem;
+  border-radius: 0;
+  white-space: pre-wrap;
+}
+
+.article p > code {
+  background-color: #1f2937;
+  font-weight: normal;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  color: white;
+}
+
+.article code::before {
+  content: none;
+}
+
+.article code::after {
+  content: none;
+}
+
+.article blockquote {
+  color: #505050;
+  font-size: 0.875rem;
+  font-style: normal;
+  border-inline-start: 0.2rem solid #6a6a6a;
+}
+
+.article blockquote > p::before {
+  content: none;
+}
+
+.article blockquote > p::after {
+  content: none;
+}
+
+.article ul,
+.article ol,
+.article li {
+  margin: 0.25rem 0;
+}
+
+.article li::marker {
+  color: #505050;
+}
+
+.article a {
+  color: #3b82f6;
+  font-weight: bold;
+}
