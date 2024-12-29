@@ -8,7 +8,13 @@ export class ArticleRepository {
     this.client = client
   }
 
-  async get(page: number, perPage: number): Promise<Article[]> {
+  /**
+   * ページネーションで記事を取得する
+   * @param page ページ番号
+   * @param perPage 1ページあたりの記事数
+   * @returns 記事の配列
+   */
+  async getWithPagination(page: number, perPage: number): Promise<Article[]> {
     if (process.env.ENVIRONMENT === 'production') {
       return [] // 開発中は本番で値を返さない
     }
@@ -22,5 +28,19 @@ export class ArticleRepository {
       ...content,
       description: content.body.replace(/<[^>]*>/g, '').slice(0, 100),
     }))
+  }
+
+  /**
+   * 記事をIDで単体取得する
+   * @param id 記事のID
+   * @returns 記事
+   */
+  async getById(id: string): Promise<Article> {
+    const res = await this.client.get<Article>({
+      endpoint: 'articles',
+      contentId: id,
+    })
+
+    return res
   }
 }

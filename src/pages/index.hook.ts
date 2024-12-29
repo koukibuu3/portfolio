@@ -16,10 +16,9 @@ export type Props = {
 
 export const getStaticProps: GetStaticProps = async () => {
   const [knowledgeList, page] = await client.getAllWithPagination(0, PER_PAGE)
-  const defaultArticles = await new ArticleRepository(microCmsClient).get(
-    0,
-    PER_PAGE,
-  )
+  const defaultArticles = await new ArticleRepository(
+    microCmsClient,
+  ).getWithPagination(0, PER_PAGE)
   const profile = await new ProfileRepository(microCmsClient).get()
 
   return {
