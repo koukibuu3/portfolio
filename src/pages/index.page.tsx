@@ -20,7 +20,7 @@ const IndexPage: NextPage<Props> = ({
 
   return (
     <>
-      <CustomHead />
+      <CustomHead title="Engineer's Blog | koukibuu3" />
 
       <div className="text-gray-600 mx-auto max-w-screen-xl">
         <GlobalNavigation />

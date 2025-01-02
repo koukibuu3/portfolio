@@ -17,7 +17,9 @@ type Props = {
 const PagePage: NextPage<Props> = ({ knowledgeList, page }) => {
   return (
     <>
-      <CustomHead page={page.currentPage} />
+      <CustomHead
+        title={`Engineer's Blog | koukibuu3${page.currentPage ? ` [page${page.currentPage}]` : ''}`}
+      />
       <div className="text-gray-600 mx-auto my-2">
         <GlobalNavigation />
 
