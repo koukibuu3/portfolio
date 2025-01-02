@@ -1,3 +1,7 @@
+.article {
+  word-break: break-word;
+}
+
 .article h2 {
   padding-bottom: 0.5rem;
   border-bottom: 0.5px solid #505050;
@@ -25,12 +29,12 @@
   }
 }
 
-.article p > code {
+.article code {
   background-color: #1f2937;
   font-weight: normal;
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
-  color: white;
+  color: #e5e7eb;
 }
 
 .article code::before {
@@ -39,6 +43,12 @@
 
 .article code::after {
   content: none;
+}
+
+.article pre > code {
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
 }
 
 .article blockquote {
@@ -74,11 +84,12 @@
 .article span[class='note-info'] {
   display: block;
   background-color: #e6f3d1;
-  padding: 1rem;
   border-radius: 0.25rem;
   position: relative;
-  padding-left: 3rem;
+  padding: 1rem 1.5rem 1rem 3rem;
   margin: 0;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .article span[class='note-info']::before {
@@ -104,10 +115,11 @@
 .article span[class='note-warn'] {
   display: block;
   background-color: #f4dddc;
-  padding: 1rem;
   border-radius: 0.25rem;
   position: relative;
-  padding-left: 3rem;
+  padding: 1rem 1.5rem 1rem 3rem;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .article span[class='note-warn']::before {
