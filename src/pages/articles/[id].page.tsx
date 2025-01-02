@@ -18,7 +18,10 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
   if (!article) return <Error statusCode={404} />
   return (
     <>
-      <CustomHead />
+      <CustomHead
+        title={`${article.title} | Engineer's Blog | koukibuu3`}
+        imageUrl={article.mainImage.url}
+      />
 
       <div className="text-gray-600 mx-auto mt-16 max-w-screen-md">
         <GlobalNavigation />

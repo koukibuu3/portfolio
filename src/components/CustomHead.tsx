@@ -2,13 +2,14 @@ import Head from 'next/head'
 import React from 'react'
 
 type Props = {
-  page?: number
+  title: string
   imageUrl?: string
 }
 
-const CustomHead: React.FC<Props> = ({ page, imageUrl = '/img/logo.svg' }) => {
-  const title = `Engineer's Blog | koukibuu3${page ? ` [page${page}]` : ''}`
-
+const CustomHead: React.FC<Props> = ({
+  title,
+  imageUrl = 'https://koukibuu3.net/img/logo.png',
+}) => {
   return (
     <Head>
       <title>{title}</title>
