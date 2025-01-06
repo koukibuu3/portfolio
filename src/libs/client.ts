@@ -4,8 +4,6 @@ import { zennClient, qiitaClient } from '~/libs'
 import { Knowledge, Page as PageType } from '~/types'
 import { Page } from '~/valueObjects'
 
-const PER_PAGE = 9
-
 /** 記事を作成日の降順にソートする */
 const sortKnowledges = (knowledgeList: Knowledge[]): Knowledge[] => {
   return knowledgeList.sort((a, b) =>
