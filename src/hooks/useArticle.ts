@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Article } from '~/types'
 
-const PER_PAGE = 9
+const PER_PAGE = 6
 
 export const useArticle = (defaultArticles: Article[]) => {
   const [articles, setArticles] = useState<Article[]>(defaultArticles)
