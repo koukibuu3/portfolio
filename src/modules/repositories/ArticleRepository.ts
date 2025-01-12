@@ -39,7 +39,10 @@ export class ArticleRepository {
         contentId: id,
         queries: { draftKey },
       })
-      .catch((error) => null)
+      .catch((error) => {
+        console.error(error)
+        return null
+      })
 
     return res
   }

@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import { draftMode } from 'next/headers'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
@@ -10,31 +11,45 @@ import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 type Props = {
   params: Promise<{ id: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export const generateMetadata = async ({
   params,
+  searchParams,
 }: Props): Promise<Metadata> => {
   const { id } = await params
-  const article = await new ArticleRepository(microCmsClient).getById(id)
+  const { draftKey } = await searchParams
+  const { isEnabled } = await draftMode()
+  const article = await new ArticleRepository(microCmsClient).getById(
+    id,
+    isEnabled ? (draftKey as string) : undefined,
+  )
   if (!article) {
     return notFound()
   }
 
+  const title = `${isEnabled ? '[下書き] ' : ''}${article.title} | ${metadata.title}`
+
   return {
-    title: `${article.title} | ${metadata.title}`,
+    title,
     description: article.description,
     openGraph: {
-      title: `${article.title} | ${metadata.title}`,
+      title,
       description: article.description,
       images: [article.mainImage.url],
     },
   }
 }
 
-const ArticlePage = async ({ params }: Props) => {
+const ArticlePage = async ({ params, searchParams }: Props) => {
   const { id } = await params
-  const article = await new ArticleRepository(microCmsClient).getById(id)
+  const { draftKey } = await searchParams
+  const { isEnabled } = await draftMode()
+  const article = await new ArticleRepository(microCmsClient).getById(
+    id,
+    isEnabled ? (draftKey as string) : undefined,
+  )
 
   if (!article) {
     return notFound()
