@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
@@ -11,7 +13,7 @@ export const GlobalNavigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="flex justify-between fixed top-0 w-full max-w-screen-xl bg-white h-16 z-50 p-2.5">
+    <header className="flex justify-between fixed top-0 w-full bg-white h-16 z-50 p-2.5">
       <SiteTitle />
       <div className="flex items-center">
         <div className="w-12 h-12 p-3 ml-auto">

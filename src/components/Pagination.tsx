@@ -9,7 +9,7 @@ const Pagination: React.FC<{ page: Page }> = ({ page }) => {
     <nav className="flex text-sm items-center text-center mx-4">
       {page.previousPage ? (
         <Link
-          href={`/pages/${page.previousPage}`}
+          href={`/knowledge/pages/${page.previousPage}`}
           passHref
           className="inline-flex hover:text-orange-600"
         >
@@ -34,7 +34,7 @@ const Pagination: React.FC<{ page: Page }> = ({ page }) => {
             ) : (
               <li key={item} className="inline-flex">
                 <Link
-                  href={`/pages/${item}`}
+                  href={`/knowledge/pages/${item}`}
                   className="inline-flex justify-center items-center w-6 h-6 mx-2 hover:text-orange-600"
                 >
                   {item}
@@ -46,7 +46,7 @@ const Pagination: React.FC<{ page: Page }> = ({ page }) => {
       </ul>
       {page.nextPage ? (
         <Link
-          href={`/pages/${page.nextPage}`}
+          href={`/knowledge/pages/${page.nextPage}`}
           passHref
           className="inline-flex hover:text-orange-600"
         >
