@@ -11,6 +11,7 @@ export const Body = ({ article }: Props) => {
     <article
       className={`${styles.article} mt-16 text-gray-700 prose mx-4 md:mx-auto max-w-screen-md`}
       dangerouslySetInnerHTML={{ __html: article.body }}
+      suppressHydrationWarning // FIXME
     />
   )
 }
