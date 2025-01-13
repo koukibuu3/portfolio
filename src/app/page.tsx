@@ -3,14 +3,15 @@ import { About } from '~/components/About'
 import { ArticleList } from '~/components/Article/ArticleList'
 import { KnowledgeList } from '~/components/Knowledge/KnowledgeList'
 import { Section, SectionTitle } from '~/components/Section'
-import { client, microCmsClient } from '~/libs'
+import { microCmsClient, qiitaClient, zennClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
+import { KnowledgeRepository } from '~/modules/repositories/KnowledgeRepository'
 import { ProfileRepository } from '~/modules/repositories/ProfileRepository'
 
 const IndexPage = async () => {
   const [articles, [knowledgeList, page], profile] = await Promise.all([
-    new ArticleRepository(microCmsClient).getWithPagination(0, 6),
-    client.getAllWithPagination(0, 6),
+    new ArticleRepository(microCmsClient).getWithPagination(1, 6),
+    new KnowledgeRepository([qiitaClient, zennClient]).getWithPagination(1, 6),
     new ProfileRepository(microCmsClient).get(),
   ])
 

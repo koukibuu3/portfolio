@@ -1,4 +1,4 @@
-import { microCmsClient } from '~/libs'
+import { microCmsClient } from '~/modules/libs'
 import { Article, ArticleWithoutDescription } from '~/types'
 
 export class ArticleRepository {
@@ -17,7 +17,7 @@ export class ArticleRepository {
   async getWithPagination(page: number, perPage: number): Promise<Article[]> {
     const res = await this.client.getList<ArticleWithoutDescription>({
       endpoint: 'articles',
-      queries: { offset: page * perPage, limit: perPage },
+      queries: { offset: (page - 1) * perPage, limit: perPage },
     })
 
     return res.contents.map((content) => ({

@@ -1,4 +1,4 @@
-import { microCmsClient } from '~/libs'
+import { microCmsClient } from '~/modules/libs'
 import { Profile } from '~/types'
 
 export class ProfileRepository {

@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { metadata } from '~/app/layout'
 import { Meta } from '~/components/Article/Meta'
 import { Body } from '~/components/ArticleDetail/Body'
-import { microCmsClient } from '~/libs'
+import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 type Props = {
