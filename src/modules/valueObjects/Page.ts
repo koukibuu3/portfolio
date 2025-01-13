@@ -9,7 +9,7 @@ class Page {
   constructor(
     private offset: number,
     private limit: number,
-    private totalCount: number
+    private totalCount: number,
   ) {
     this.currentPage = this.getCurrentPage()
     this.previousPage = this.getPreviousPage()

@@ -1,5 +1,6 @@
 import Parser from 'rss-parser'
 
+import { knowledgeClientInterface } from '~/modules/libs/knowledgeClientInterface'
 import { Knowledge, ZennFeed, ZennItem } from '~/types'
 
 const fetch = async (): Promise<ZennItem[]> => {
@@ -9,7 +10,7 @@ const fetch = async (): Promise<ZennItem[]> => {
   return res.items
 }
 
-const zennClient = {
+const zennClient: knowledgeClientInterface = {
   getAll: async (): Promise<Knowledge[]> => {
     const zennItems = await fetch()
     return zennItems.map(

@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+import { knowledgeClientInterface } from '~/modules/libs/knowledgeClientInterface'
 import { Knowledge, QiitaItem } from '~/types'
 
 const fetch = async (): Promise<QiitaItem[]> => {
@@ -9,13 +10,14 @@ const fetch = async (): Promise<QiitaItem[]> => {
       responseType: 'json',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.QIITA_API_KEY}`,
       },
     })
     .get<QiitaItem[]>('items')
   return res.data
 }
 
-const qiitaClient = {
+const qiitaClient: knowledgeClientInterface = {
   getAll: async (): Promise<Knowledge[]> => {
     const qiitaItems = await fetch()
     return qiitaItems.map(

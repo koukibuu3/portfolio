@@ -1,4 +1,4 @@
-import { microCmsClient } from '~/libs'
+import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 export async function GET(req: Request) {
