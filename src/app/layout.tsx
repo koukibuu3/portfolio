@@ -28,6 +28,12 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <GoogleAnalytics />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Engineer's Blog | koukibuu3"
+          href="/api/rss"
+        />
       </head>
       <body>
         <GlobalNavigation />
