@@ -36,7 +36,7 @@ export async function GET() {
       link: `${process.env.SITE_URL}/articles/${article.id}`,
       description: article.description,
       content: article.body,
-      date: new Date(article.createdAt),
+      date: new Date(article.updatedAt),
       category: article.tags.map((tag) => ({ name: tag.name })),
       image: article.mainImage.url,
     })
