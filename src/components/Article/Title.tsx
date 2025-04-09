@@ -3,5 +3,5 @@ type Props = {
 }
 
 export const Title: React.FC<Props> = ({ title }) => {
-  return <h2 className="text-xl font-bold">{title}</h2>
+  return <h2 className="text-xl font-bold text-black">{title}</h2>
 }
