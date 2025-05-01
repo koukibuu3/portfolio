@@ -66,7 +66,9 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
       />
 
       <div className="m-4 mb-16 mx-4 md:mx-auto">
-        <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
+        <h1 className="text-3xl font-bold mb-4 leading-snug">
+          {article.title}
+        </h1>
         <Meta tags={article.tags} publishedAt={article.publishedAt} />
       </div>
 

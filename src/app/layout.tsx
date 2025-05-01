@@ -37,7 +37,7 @@ export default function RootLayout({
       </head>
       <body>
         <GlobalNavigation />
-        <div className="text-gray-600 mt-16">{children}</div>
+        <div className="text-gray-900 mt-16">{children}</div>
         <Copyright />
       </body>
     </html>

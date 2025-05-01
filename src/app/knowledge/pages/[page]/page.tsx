@@ -29,7 +29,7 @@ const KnowledgePage = async ({ params }: Props) => {
   ]).getWithPagination(Number(page), 6)
 
   return (
-    <div className="text-gray-600 mx-auto max-w-screen-xl my-2">
+    <div className="mx-auto max-w-screen-xl my-2">
       <Section id="knowledge">
         <SectionTitle title="Knowledge" subTitle="技術メモ" />
         <KnowledgeList knowledgeList={knowledgeList} />
