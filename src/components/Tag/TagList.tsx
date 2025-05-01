@@ -11,9 +11,14 @@ export const TagList: React.FC<Props> = ({ tags }) => {
     return null
   }
 
+  // カテゴリ分けのためのタグは除く
+  const filteredTags = tags.filter(
+    (tag) => tag.name !== 'TECH' && tag.name !== 'POEM',
+  )
+
   return (
     <ul className="flex flex-row gap-1">
-      {tags?.map((tag) => (
+      {filteredTags?.map((tag) => (
         <li key={tag.id}>
           <TagItem tag={tag} />
         </li>

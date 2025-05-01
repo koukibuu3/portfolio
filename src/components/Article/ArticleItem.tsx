@@ -15,7 +15,7 @@ export const ArticleItem: React.FC<Props> = ({ article }) => {
         href={`/articles/${article.id}`}
         className="flex flex-col gap-2 w-full"
       >
-        <Title title={article.title} />
+        <Title title={article.title} tags={article.tags} />
         <Meta tags={article.tags} publishedAt={article.publishedAt} />
         <Description description={article.description} />
       </a>
