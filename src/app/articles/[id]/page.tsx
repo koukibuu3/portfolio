@@ -56,7 +56,7 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
   }
 
   return (
-    <div className="mx-auto max-w-screen-md">
+    <div className="mx-auto max-w-screen-sm">
       <Image
         src={article.mainImage.url}
         alt={`「${article.title}」のメイン画像`}

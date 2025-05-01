@@ -19,21 +19,21 @@ const IndexPage = async () => {
   ])
 
   return (
-    <div className="mx-auto max-w-screen-xl">
+    <div className="mx-auto max-w-screen-lg">
       <Section id="article">
         <SectionTitle title="Article" subTitle="記事" />
         <ArticleList defaultArticles={articles} />
-      </Section>
-
-      <Section id="slide">
-        <SectionTitle title="Slides" subTitle="発表資料" />
-        <SlideList slides={slides} />
       </Section>
 
       <Section id="knowledge">
         <SectionTitle title="Knowledge" subTitle="技術メモ" />
         <KnowledgeList knowledgeList={knowledgeList} />
         <Pagination page={page} />
+      </Section>
+
+      <Section id="slide">
+        <SectionTitle title="Slides" subTitle="発表資料" />
+        <SlideList slides={slides} />
       </Section>
 
       <Section id="about">

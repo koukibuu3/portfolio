@@ -8,7 +8,7 @@ type Props = {
  */
 export const Section: React.FC<Props> = ({ id, children }) => {
   return (
-    <section id={id} className="mt-16">
+    <section id={id} className="mt-16 mx-8">
       {children}
     </section>
   )
