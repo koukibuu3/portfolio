@@ -10,7 +10,13 @@ module.exports = {
         port: '3000',
         pathname: '/notes/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.vercel.app',
+        pathname: '/notes/**',
+      },
     ],
+    unoptimized: process.env.NODE_ENV === 'production',
   },
   pageExtensions: ['ts', 'tsx'],
   webpack: (config, { isServer }) => {

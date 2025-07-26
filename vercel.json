@@ -21,5 +21,10 @@
       "includeFiles": "notes/**"
     }
   },
-  "outputFileTracing": true
+  "routes": [
+    {
+      "src": "/notes/(.*)",
+      "dest": "/api/static-assets?path=$1"
+    }
+  ]
 }

@@ -5,7 +5,7 @@
     "dev": "next dev",
     "prebuild": "npm run init-submodules",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "bash bin/copy-notes.sh && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",

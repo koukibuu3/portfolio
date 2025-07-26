@@ -50,6 +50,7 @@ const ArticlePage = async ({ params }: Props) => {
         width={article.mainImage.width}
         height={article.mainImage.height}
         className="w-full rounded-none md:rounded-md"
+        unoptimized={article.mainImage.url.startsWith('/notes/')}
       />
 
       <div className="m-4 mb-16 mx-4 md:mx-auto">
