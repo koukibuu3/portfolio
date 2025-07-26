@@ -3,7 +3,7 @@
   "version": 2,
   "github": {
     "enabled": true,
-    "autoJobCancelation": false
+    "autoJobCancellation": false
   },
   "git": {
     "deploymentEnabled": {
@@ -12,12 +12,14 @@
   },
   "build": {
     "env": {
-      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+      "ENABLE_EXPERIMENTAL_COREPACK": "1",
+      "NPM_FLAGS": "--legacy-peer-deps"
     }
   },
   "functions": {
     "app/**": {
       "includeFiles": "notes/**"
     }
-  }
+  },
+  "outputFileTracing": true
 }

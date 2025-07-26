@@ -13,4 +13,24 @@ module.exports = {
     ],
   },
   pageExtensions: ['ts', 'tsx'],
+  webpack: (config, { isServer }) => {
+    // Vercelでのdebugモジュール関連の警告を回避
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        crypto: false,
+      }
+    }
+
+    // デバッグモジュールの問題を回避
+    config.externals = config.externals || []
+    config.externals.push({
+      'supports-color': 'supports-color',
+    })
+
+    return config
+  },
 }
