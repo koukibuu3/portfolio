@@ -3,13 +3,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run init-submodules",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "preinstall": "typesync || :",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "init-submodules": "bash bin/init-submodules.sh"
   },
   "dependencies": {
     "@types/image-size": "^0.7.0",

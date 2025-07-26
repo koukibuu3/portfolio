@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "github": {
+    "enabled": true,
+    "autoJobCancelation": false
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1"
+    }
+  },
+  "functions": {
+    "app/**": {
+      "includeFiles": "notes/**"
+    }
+  }
+}
