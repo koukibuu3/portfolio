@@ -6,7 +6,6 @@ import { notFound } from 'next/navigation'
 import { metadata } from '~/app/layout'
 import { Meta } from '~/components/Article/Meta'
 import { Body } from '~/components/ArticleDetail/Body'
-import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 type Props = {
@@ -21,7 +20,7 @@ export const generateMetadata = async ({
   const { id } = await params
   const { draftKey } = await searchParams
   const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
+  const article = await new ArticleRepository().getById(
     id,
     isEnabled ? (draftKey as string) : undefined,
   )
@@ -46,7 +45,7 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
   const { id } = await params
   const { draftKey } = await searchParams
   const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
+  const article = await new ArticleRepository().getById(
     id,
     isEnabled ? (draftKey as string) : undefined,
   )
