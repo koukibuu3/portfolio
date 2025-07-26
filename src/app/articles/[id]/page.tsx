@@ -76,4 +76,14 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
   )
 }
 
+export async function generateStaticParams() {
+  const repository = new ArticleRepository()
+  // 全記事を取得（ページネーションなし）
+  const articles = await repository.getWithPagination(1, 1000)
+  
+  return articles.map((article) => ({
+    id: article.id,
+  }))
+}
+
 export default ArticlePage
