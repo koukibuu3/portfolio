@@ -1,0 +1,39 @@
+name: Build on Submodule Update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notes'
+      - '.gitmodules'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.3'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+
+      - name: Deploy to production
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "デプロイ処理をここに追加"
+          # 例: Vercel, Netlify, AWS S3など、使用しているホスティングサービスへのデプロイコマンド
