@@ -1,11 +1,6 @@
-import { visit } from 'unist-util-visit'
+import type { Paragraph, Root } from 'mdast'
 import type { Plugin } from 'unified'
-import type { Root, Paragraph, Text } from 'mdast'
-
-interface ObsidianImageNode extends Text {
-  type: 'text'
-  value: string
-}
+import { visit } from 'unist-util-visit'
 
 export const remarkObsidianImage: Plugin<[], Root> = () => {
   return (tree) => {

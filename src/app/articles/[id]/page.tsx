@@ -1,5 +1,4 @@
 import { type Metadata } from 'next'
-import { draftMode } from 'next/headers'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
@@ -15,20 +14,14 @@ type Props = {
 
 export const generateMetadata = async ({
   params,
-  searchParams,
 }: Props): Promise<Metadata> => {
   const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository().getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
+  const article = await new ArticleRepository().getById(id)
   if (!article) {
     return notFound()
   }
 
-  const title = `${isEnabled ? '[下書き] ' : ''}${article.title} | ${metadata.title}`
+  const title = `${article.title} | ${metadata.title}`
 
   return {
     title,
@@ -41,14 +34,9 @@ export const generateMetadata = async ({
   }
 }
 
-const ArticlePage = async ({ params, searchParams }: Props) => {
+const ArticlePage = async ({ params }: Props) => {
   const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository().getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
+  const article = await new ArticleRepository().getById(id)
 
   if (!article) {
     return notFound()

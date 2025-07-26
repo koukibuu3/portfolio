@@ -1,12 +1,13 @@
 import fs from 'fs/promises'
 import path from 'path'
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
+
+import imageSize from 'image-size'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkHtml from 'remark-html'
+import remarkParse from 'remark-parse'
+import { unified } from 'unified'
 import yaml from 'yaml'
-import imageSize from 'image-size'
-import { Article } from '~/types'
+
 import { remarkObsidianImage } from './remarkObsidianImage'
 
 interface FrontMatter {
@@ -102,7 +103,8 @@ export async function getImageDimensions(
   imagePath: string,
 ): Promise<{ width: number; height: number }> {
   try {
-    const dimensions = imageSize(imagePath)
+    const buffer = await fs.readFile(imagePath)
+    const dimensions = imageSize(buffer)
     return {
       width: dimensions.width || 1200,
       height: dimensions.height || 630,
