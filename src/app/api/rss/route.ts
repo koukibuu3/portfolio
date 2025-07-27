@@ -1,6 +1,5 @@
 import { Feed } from 'feed'
 
-import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 import { Article } from '~/types/Article'
 
@@ -25,9 +24,7 @@ export async function GET() {
     },
   })
 
-  const articles = await new ArticleRepository(
-    microCmsClient,
-  ).getWithPagination(1, 50)
+  const articles = await new ArticleRepository().getWithPagination(1, 50)
 
   articles.forEach((article: Article) => {
     feed.addItem({

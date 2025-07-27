@@ -12,7 +12,7 @@ import { SlideRepository } from '~/modules/repositories/SlideRepository'
 
 const IndexPage = async () => {
   const [articles, [knowledgeList, page], profile, slides] = await Promise.all([
-    new ArticleRepository(microCmsClient).getWithPagination(1, 6),
+    new ArticleRepository().getWithPagination(1, 6),
     new KnowledgeRepository([qiitaClient, zennClient]).getWithPagination(1, 6),
     new ProfileRepository(microCmsClient).get(),
     new SlideRepository().getAll(),

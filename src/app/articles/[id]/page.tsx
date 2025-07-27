@@ -1,12 +1,10 @@
 import { type Metadata } from 'next'
-import { draftMode } from 'next/headers'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { metadata } from '~/app/layout'
 import { Meta } from '~/components/Article/Meta'
 import { Body } from '~/components/ArticleDetail/Body'
-import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 type Props = {
@@ -16,20 +14,14 @@ type Props = {
 
 export const generateMetadata = async ({
   params,
-  searchParams,
 }: Props): Promise<Metadata> => {
   const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
+  const article = await new ArticleRepository().getById(id)
   if (!article) {
     return notFound()
   }
 
-  const title = `${isEnabled ? '[下書き] ' : ''}${article.title} | ${metadata.title}`
+  const title = `${article.title} | ${metadata.title}`
 
   return {
     title,
@@ -42,14 +34,9 @@ export const generateMetadata = async ({
   }
 }
 
-const ArticlePage = async ({ params, searchParams }: Props) => {
+const ArticlePage = async ({ params }: Props) => {
   const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
+  const article = await new ArticleRepository().getById(id)
 
   if (!article) {
     return notFound()
@@ -63,6 +50,7 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
         width={article.mainImage.width}
         height={article.mainImage.height}
         className="w-full rounded-none md:rounded-md"
+        unoptimized={article.mainImage.url.startsWith('/notes/')}
       />
 
       <div className="m-4 mb-16 mx-4 md:mx-auto">
@@ -75,6 +63,16 @@ const ArticlePage = async ({ params, searchParams }: Props) => {
       <Body article={article} />
     </div>
   )
+}
+
+export async function generateStaticParams() {
+  const repository = new ArticleRepository()
+  // 全記事を取得（ページネーションなし）
+  const articles = await repository.getWithPagination(1, 1000)
+  
+  return articles.map((article) => ({
+    id: article.id,
+  }))
 }
 
 export default ArticlePage

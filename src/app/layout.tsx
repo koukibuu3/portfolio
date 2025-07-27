@@ -7,6 +7,7 @@ import { Copyright } from '~/components/Copyright/Copyright'
 import { GlobalNavigation } from '~/components/GlobalNavigation'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL || 'http://localhost:3000'),
   title: "Engineer's Blog | koukibuu3",
   description: 'Portfolio',
   icons: {

@@ -1,4 +1,3 @@
-import { microCmsClient } from '~/modules/libs'
 import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
 
 export async function GET(req: Request) {
@@ -6,9 +5,7 @@ export async function GET(req: Request) {
   const page = searchParams.get('page') || 0
   const perPage = searchParams.get('perPage') || 6
 
-  const articles = await new ArticleRepository(
-    microCmsClient,
-  ).getWithPagination(Number(page), Number(perPage))
+  const articles = await new ArticleRepository().getWithPagination(Number(page), Number(perPage))
 
   return new Response(JSON.stringify(articles), {
     status: 200,

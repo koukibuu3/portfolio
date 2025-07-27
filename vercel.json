@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "github": {
+    "enabled": true,
+    "autoJobCancellation": false
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "1",
+      "NPM_FLAGS": "--legacy-peer-deps"
+    }
+  },
+  "functions": {
+    "app/**": {
+      "includeFiles": "notes/**"
+    }
+  },
+  "routes": [
+    {
+      "src": "/notes/(.*)",
+      "dest": "/api/static-assets?path=$1"
+    }
+  ]
+}
