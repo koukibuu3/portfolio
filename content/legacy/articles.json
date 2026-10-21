@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "id": "58u0ek2oawuk",
+      "title": "7年務めた会社を辞めて、初めての転職をします。",
+      "description": "このたび、新卒で入社した会社を辞めて転職をすることになりました。本日最終出社にて手続きを退職手続きを済ませてきたため、退職エントリとして気持ちを綴ります。私が務めていた会社はいわゆるSES企業で、複数の業務委託を経験しました。未経験や文系でも見込みがあれば雇い、充実な研修制度で育て上げてくれる会社で、私は大学は情報系で",
+      "publishedAt": "2025-04-30T14:35:51.392Z",
+      "updatedAt": "2025-09-07T14:41:02.227Z",
+      "createdAt": "2025-04-30T14:21:18.424Z",
+      "revisedAt": "2025-09-07T14:41:02.227Z",
+      "mainImage": {
+        "url": "/content/articles/362310515a5775a7c5fd.png",
+        "height": 1024,
+        "width": 1743
+      },
+      "tags": [
+        {
+          "id": "bq3mfy",
+          "createdAt": "2025-04-30T14:21:39.106Z",
+          "updatedAt": "2025-04-30T14:21:39.106Z",
+          "publishedAt": "2025-04-30T14:21:39.106Z",
+          "revisedAt": "2025-04-30T14:21:39.106Z",
+          "name": "転職"
+        },
+        {
+          "id": "d700fe",
+          "createdAt": "2025-05-01T15:07:19.901Z",
+          "updatedAt": "2025-05-01T15:07:19.901Z",
+          "publishedAt": "2025-05-01T15:07:19.901Z",
+          "revisedAt": "2025-05-01T15:07:19.901Z",
+          "name": "POEM"
+        }
+      ],
+      "bodyFile": "58u0ek2oawuk.html",
+      "rssGuid": "https://koukibuu3.net/articles/58u0ek2oawuk"
+    },
+    {
+      "id": "1ipcx2fh69e8",
+      "title": "ブログにスライド閲覧機能を追加する：Slidev の活用法",
+      "description": "Markdown でスライドが作れる Slidev を使って、ブログにスライド閲覧機能を実装します。背景スライドを Web 公開するサービスには以下がありますが、どうにも私は UI が好きではなくて…SlideshareSpeakerdeckDocswell特にスマホで閲覧する際、ナビゲーションボタンが大きすぎてスライ",
+      "publishedAt": "2025-03-27T13:11:00.531Z",
+      "updatedAt": "2025-05-01T15:15:12.156Z",
+      "createdAt": "2025-01-27T04:41:06.079Z",
+      "revisedAt": "2025-05-01T15:15:12.156Z",
+      "mainImage": {
+        "url": "/content/articles/9b75c555a27d911f103c.png",
+        "height": 630,
+        "width": 1200
+      },
+      "tags": [
+        {
+          "id": "hcc6tm",
+          "createdAt": "2024-12-24T16:23:24.079Z",
+          "updatedAt": "2024-12-24T16:23:24.079Z",
+          "publishedAt": "2024-12-24T16:23:24.079Z",
+          "revisedAt": "2024-12-24T16:23:24.079Z",
+          "name": "JavaScript"
+        },
+        {
+          "id": "9l9ndv",
+          "createdAt": "2025-03-27T13:05:54.510Z",
+          "updatedAt": "2025-03-27T13:05:54.510Z",
+          "publishedAt": "2025-03-27T13:05:54.510Z",
+          "revisedAt": "2025-03-27T13:05:54.510Z",
+          "name": "pnpm"
+        },
+        {
+          "id": "v134y8",
+          "createdAt": "2025-03-27T13:06:23.888Z",
+          "updatedAt": "2025-03-27T13:06:23.888Z",
+          "publishedAt": "2025-03-27T13:06:23.888Z",
+          "revisedAt": "2025-03-27T13:06:23.888Z",
+          "name": "Slidev"
+        },
+        {
+          "id": "voc4bq",
+          "createdAt": "2025-05-01T15:07:09.120Z",
+          "updatedAt": "2025-05-01T15:07:09.120Z",
+          "publishedAt": "2025-05-01T15:07:09.120Z",
+          "revisedAt": "2025-05-01T15:07:09.120Z",
+          "name": "TECH"
+        }
+      ],
+      "bodyFile": "1ipcx2fh69e8.html",
+      "rssGuid": "https://koukibuu3.net/articles/1ipcx2fh69e8"
+    },
+    {
+      "id": "z7g19vk5jecr",
+      "title": "なぜリポジトリはエンティティ単位で設計すべきなのか？",
+      "description": "ソフトウェア開発において、データの永続化は避けて通れない課題です。この課題を効率的に解決する設計パターンのひとつが リポジトリ（Repository） です。リポジトリは、データベースやストレージ、インメモリキャッシュなどのデータ永続化層と直接やり取りを行う役割を担います。リポジトリを導入することで、アプリケーションの",
+      "publishedAt": "2025-03-20T04:52:50.242Z",
+      "updatedAt": "2025-05-01T15:15:20.400Z",
+      "createdAt": "2025-01-13T07:10:53.436Z",
+      "revisedAt": "2025-05-01T15:15:20.400Z",
+      "mainImage": {
+        "url": "/content/articles/d2ca128351dfe9c02bdf.png",
+        "height": 630,
+        "width": 1200
+      },
+      "tags": [
+        {
+          "id": "87cw48",
+          "createdAt": "2024-12-29T16:24:09.753Z",
+          "updatedAt": "2024-12-29T16:24:33.542Z",
+          "publishedAt": "2024-12-29T16:24:09.753Z",
+          "revisedAt": "2024-12-29T16:24:33.542Z",
+          "name": "ドメイン駆動設計"
+        },
+        {
+          "id": "rv7vl8",
+          "createdAt": "2025-01-13T07:30:35.855Z",
+          "updatedAt": "2025-01-13T07:30:35.855Z",
+          "publishedAt": "2025-01-13T07:30:35.855Z",
+          "revisedAt": "2025-01-13T07:30:35.855Z",
+          "name": "リポジトリ "
+        },
+        {
+          "id": "voc4bq",
+          "createdAt": "2025-05-01T15:07:09.120Z",
+          "updatedAt": "2025-05-01T15:07:09.120Z",
+          "publishedAt": "2025-05-01T15:07:09.120Z",
+          "revisedAt": "2025-05-01T15:07:09.120Z",
+          "name": "TECH"
+        }
+      ],
+      "bodyFile": "z7g19vk5jecr.html",
+      "rssGuid": "https://koukibuu3.net/articles/z7g19vk5jecr"
+    },
+    {
+      "id": "7hltyl68nznj",
+      "title": "コード品質を高める！明日から使えるGitのコミット3つのコツ",
+      "description": "近年ではエンジニアの必須スキルとなった Git の活用法について、コード品質を向上させるポイントを 3 つ紹介します。エンジニアになりたての方や「Git は使っているけど自信がない」という方にも、ぜひ役立てていただければ幸いです。今回、登場人物を大きく以下の 3 つに分けます。実装者レビュアー他のエンジニアコミットメッ",
+      "publishedAt": "2025-01-02T13:57:12.354Z",
+      "updatedAt": "2025-05-01T15:15:29.207Z",
+      "createdAt": "2025-01-02T04:40:10.512Z",
+      "revisedAt": "2025-05-01T15:15:29.207Z",
+      "mainImage": {
+        "url": "/content/articles/7b2a052f2f792a082689.png",
+        "height": 630,
+        "width": 1200
+      },
+      "tags": [
+        {
+          "id": "nutfq9",
+          "createdAt": "2025-01-02T09:36:45.686Z",
+          "updatedAt": "2025-03-27T13:05:13.440Z",
+          "publishedAt": "2025-01-02T09:36:45.686Z",
+          "revisedAt": "2025-03-27T13:05:13.440Z",
+          "name": "Git"
+        },
+        {
+          "id": "icv58j",
+          "createdAt": "2024-12-29T16:23:34.603Z",
+          "updatedAt": "2024-12-29T16:23:34.603Z",
+          "publishedAt": "2024-12-29T16:23:34.603Z",
+          "revisedAt": "2024-12-29T16:23:34.603Z",
+          "name": "駆け出しエンジニア応援"
+        },
+        {
+          "id": "voc4bq",
+          "createdAt": "2025-05-01T15:07:09.120Z",
+          "updatedAt": "2025-05-01T15:07:09.120Z",
+          "publishedAt": "2025-05-01T15:07:09.120Z",
+          "revisedAt": "2025-05-01T15:07:09.120Z",
+          "name": "TECH"
+        }
+      ],
+      "bodyFile": "7hltyl68nznj.html",
+      "rssGuid": "https://koukibuu3.net/articles/7hltyl68nznj"
+    }
+  ]
+}

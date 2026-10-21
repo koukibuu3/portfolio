@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 30 460 320" fill="none" role="img" aria-label="ダッシュボード画面のイメージ">
+  <!-- Display frame -->
+  <rect x="80" y="40" width="440" height="300" rx="10" fill="#374151"/>
+  <rect x="92" y="52" width="416" height="276" rx="4" fill="#ffffff"/>
+
+  <!-- Window controls -->
+  <circle cx="108" cy="68" r="4" fill="#ef4444"/>
+  <circle cx="122" cy="68" r="4" fill="#fbbf24"/>
+  <circle cx="136" cy="68" r="4" fill="#22c55e"/>
+  <line x1="92" y1="84" x2="508" y2="84" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Sidebar -->
+  <rect x="92" y="84" width="80" height="244" fill="#f9fafb"/>
+  <rect x="104" y="100" width="56" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="104" y="116" width="48" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="104" y="132" width="52" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="104" y="148" width="44" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="104" y="164" width="50" height="6" rx="2" fill="#d1d5db"/>
+
+  <!-- Main heading -->
+  <rect x="190" y="100" width="140" height="10" rx="2" fill="#374151"/>
+  <rect x="190" y="120" width="220" height="6" rx="2" fill="#d1d5db"/>
+
+  <!-- Stat cards -->
+  <rect x="190" y="142" width="96" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="200" y="152" width="48" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="200" y="168" width="60" height="12" rx="2" fill="#374151"/>
+
+  <rect x="294" y="142" width="96" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="304" y="152" width="48" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="304" y="168" width="60" height="12" rx="2" fill="#374151"/>
+
+  <rect x="398" y="142" width="96" height="52" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="408" y="152" width="48" height="6" rx="2" fill="#d1d5db"/>
+  <rect x="408" y="168" width="60" height="12" rx="2" fill="#374151"/>
+
+  <!-- Bar chart panel -->
+  <rect x="190" y="208" width="304" height="108" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="202" y="218" width="80" height="6" rx="2" fill="#374151"/>
+
+  <!-- Chart baseline -->
+  <line x1="206" y1="302" x2="482" y2="302" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Bars -->
+  <rect x="216" y="272" width="28" height="30" rx="2" fill="#86efac"/>
+  <rect x="256" y="258" width="28" height="44" rx="2" fill="#4ade80"/>
+  <rect x="296" y="244" width="28" height="58" rx="2" fill="#22c55e"/>
+  <rect x="336" y="226" width="28" height="76" rx="2" fill="#16a34a"/>
+  <rect x="376" y="248" width="28" height="54" rx="2" fill="#22c55e"/>
+  <rect x="416" y="234" width="28" height="68" rx="2" fill="#16a34a"/>
+  <rect x="456" y="218" width="28" height="84" rx="2" fill="#15803d"/>
+
+  <!-- Trend line -->
+  <polyline points="230,286 270,278 310,272 350,250 390,260 430,242 470,230" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="230" cy="286" r="3" fill="#16a34a"/>
+  <circle cx="270" cy="278" r="3" fill="#16a34a"/>
+  <circle cx="310" cy="272" r="3" fill="#16a34a"/>
+  <circle cx="350" cy="250" r="3" fill="#16a34a"/>
+  <circle cx="390" cy="260" r="3" fill="#16a34a"/>
+  <circle cx="430" cy="242" r="3" fill="#16a34a"/>
+  <circle cx="470" cy="230" r="3" fill="#16a34a"/>
+</svg>

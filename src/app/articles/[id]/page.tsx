@@ -1,80 +1,85 @@
-import { type Metadata } from 'next'
-import { draftMode } from 'next/headers'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { articleBody, articles, findArticle } from '~/content/articles'
+import { formatDate, jsonLd, site } from '~/content/site'
 
-import { metadata } from '~/app/layout'
-import { Meta } from '~/components/Article/Meta'
-import { Body } from '~/components/ArticleDetail/Body'
-import { microCmsClient } from '~/modules/libs'
-import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
-
-type Props = {
-  params: Promise<{ id: string }>
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+type Props = { params: Promise<{ id: string }> }
+export const dynamicParams = false
+export const dynamic = 'error'
+export function generateStaticParams() {
+  return articles.map(({ id }) => ({ id }))
 }
-
-export const generateMetadata = async ({
-  params,
-  searchParams,
-}: Props): Promise<Metadata> => {
-  const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
-  if (!article) {
-    return notFound()
-  }
-
-  const title = `${isEnabled ? '[下書き] ' : ''}${article.title} | ${metadata.title}`
-
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const article = findArticle((await params).id)
+  if (!article) notFound()
   return {
-    title,
+    title: article.title,
     description: article.description,
+    alternates: { canonical: `/articles/${article.id}` },
     openGraph: {
-      title,
+      title: article.title,
       description: article.description,
+      type: 'article',
+      url: `/articles/${article.id}`,
+      publishedTime: article.publishedAt,
+      modifiedTime: article.updatedAt,
       images: [article.mainImage.url],
     },
   }
 }
-
-const ArticlePage = async ({ params, searchParams }: Props) => {
-  const { id } = await params
-  const { draftKey } = await searchParams
-  const { isEnabled } = await draftMode()
-  const article = await new ArticleRepository(microCmsClient).getById(
-    id,
-    isEnabled ? (draftKey as string) : undefined,
-  )
-
-  if (!article) {
-    return notFound()
-  }
-
+export default async function ArticlePage({ params }: Props) {
+  const article = findArticle((await params).id)
+  if (!article) notFound()
+  const body = await articleBody(article)
   return (
-    <div className="mx-auto max-w-screen-sm">
+    <main id="main" className="wrap article-page" tabIndex={-1}>
+      <a className="article-back textlink" href="/#writing">
+        ← Writing
+      </a>
+      <header className="article-header">
+        <h1>{article.title}</h1>
+        <div className="article-meta">
+          <time dateTime={article.publishedAt}>
+            {formatDate(article.publishedAt)}
+          </time>
+          {article.tags.map((tag) => (
+            <span key={tag.id}>{tag.name}</span>
+          ))}
+        </div>
+      </header>
       <Image
+        className="article-cover"
         src={article.mainImage.url}
-        alt={`「${article.title}」のメイン画像`}
         width={article.mainImage.width}
         height={article.mainImage.height}
-        className="w-full rounded-none md:rounded-md"
+        alt={`「${article.title}」のメイン画像`}
+        sizes="(min-width: 880px) 800px, 100vw"
+        priority
       />
-
-      <div className="m-4 mb-16 mx-4 md:mx-auto">
-        <h1 className="text-3xl font-bold mb-4 leading-snug">
-          {article.title}
-        </h1>
-        <Meta tags={article.tags} publishedAt={article.publishedAt} />
-      </div>
-
-      <Body article={article} />
-    </div>
+      <article
+        className="article-body"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
+      <a className="textlink article-end" href="/#writing">
+        ← Writingへ戻る
+      </a>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: article.title,
+            description: article.description,
+            datePublished: article.publishedAt,
+            dateModified: article.updatedAt,
+            url: `${site.url}/articles/${article.id}`,
+            image: `${site.url}${article.mainImage.url}`,
+            author: { '@type': 'Person', name: 'Kouki Akasaka', url: site.url },
+          }),
+        }}
+      />
+    </main>
   )
 }
-
-export default ArticlePage

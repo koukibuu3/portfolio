@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  images: {
-    domains: ['images.microcms-assets.io', 'koukibuu3.github.io'],
+  poweredByHeader: false,
+  turbopack: { root: __dirname },
+  outputFileTracingIncludes: {
+    '/api/articles': ['./content/legacy/bodies/*.html'],
   },
-  pageExtensions: ['ts', 'tsx'],
+  async redirects() {
+    return ['projects', 'writing', 'about'].map((section) => ({
+      source: `/${section}`,
+      destination: `/#${section}`,
+      permanent: true,
+    }))
+  },
 }
