@@ -40,7 +40,11 @@ export function NavigationController() {
       schedule()
     })
     observer.observe(header)
-    const targetFor = (hash: string) => document.getElementById(hash.slice(1))
+    const targetFor = (hash: string) =>
+      document.getElementById(hash.slice(1)) ||
+      (hash.startsWith('#project-')
+        ? document.getElementById('projects')
+        : null)
     const scroll = (target: HTMLElement, smooth: boolean, focus: boolean) => {
       const behavior = smooth && !reduced.matches ? 'smooth' : 'instant'
       if (target.id === 'home') window.scrollTo({ top: 0, behavior })
@@ -82,11 +86,7 @@ export function NavigationController() {
       scroll(target, true, true)
     }
     const pop = () => {
-      if (
-        document.querySelector('dialog[open]') ||
-        new URLSearchParams(location.search).has('project')
-      )
-        return
+      if (document.querySelector('dialog[open]')) return
       const target = targetFor(location.hash || '#home')
       if (target) scroll(target, false, true)
     }
@@ -98,16 +98,16 @@ export function NavigationController() {
         slide: 'slides-retired',
         slides: 'slides-retired',
       }
-      const replacement = old[location.hash.slice(1)]
+      const replacement = location.hash.startsWith('#project-')
+        ? 'projects'
+        : old[location.hash.slice(1)]
       if (replacement) {
         const url = new URL(location.href)
         url.hash = replacement
         history.replaceState(history.state, '', url)
       }
-      if (!new URLSearchParams(location.search).has('project')) {
-        const target = targetFor(location.hash)
-        if (target) scroll(target, false, false)
-      }
+      const target = targetFor(location.hash)
+      if (target) scroll(target, false, false)
     }
     document.addEventListener('click', click)
     window.addEventListener('scroll', schedule, { passive: true })

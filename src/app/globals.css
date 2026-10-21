@@ -307,11 +307,6 @@ a {
   color: var(--ink);
   text-decoration: none;
 }
-.project-card:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 8px 24px var(--card-shadow);
-}
 .project-media {
   display: flex;
   align-items: center;
@@ -383,12 +378,6 @@ a {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.8;
-}
-.card-end {
-  flex: none;
-  font-size: 18px;
-  line-height: 1.45;
-  color: var(--accent);
 }
 .focus-grid {
   display: grid;
@@ -879,23 +868,15 @@ dialog::backdrop {
   }
 }
 
-/* Enhanced dialogs retain a native anchor fallback when JavaScript is unavailable. */
+/* Shared anchor offset and legacy notice. */
 :root {
   --header-height: 84px;
 }
-.project-fallback,
 .legacy-notice {
   display: none;
 }
-.project-fallback:target,
 .legacy-notice:target {
   display: block;
-}
-:root[data-projects-enhanced] .project-fallback {
-  display: none;
-}
-.project-fallback {
-  margin-top: 24px;
 }
 .project-detail-section {
   margin-top: 28px;

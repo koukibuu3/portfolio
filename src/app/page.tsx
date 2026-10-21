@@ -1,5 +1,3 @@
-import { ProjectController } from '~/components/projects/ProjectController'
-import { ProjectDetails } from '~/components/projects/ProjectDetails'
 import { ProjectVisual } from '~/components/projects/ProjectVisual'
 import { experience, profile } from '~/content/profile'
 import { projects } from '~/content/projects'
@@ -93,36 +91,21 @@ export default function HomePage() {
           </div>
           <div className="project-grid">
             {projects.map((project) => (
-              <a
+              <article
                 className="project-card"
                 key={project.slug}
                 id={`card-${project.slug}`}
-                data-project={project.slug}
-                href={`/?project=${project.slug}#project-${project.slug}`}
               >
                 <ProjectVisual project={project} />
                 <div className="project-info">
                   <div className="project-title">
                     <h3>{project.name}</h3>
-                    <span className="card-end" aria-hidden="true">
-                      →
-                    </span>
                   </div>
                   <p>{project.summary}</p>
                 </div>
-              </a>
+              </article>
             ))}
           </div>
-          {projects.map((project) => (
-            <section
-              key={project.slug}
-              id={`project-${project.slug}`}
-              className="project-fallback"
-            >
-              <ProjectDetails project={project} />
-              <a href="/#projects">Projectsへ戻る</a>
-            </section>
-          ))}
         </div>
       </section>
       <section
@@ -257,7 +240,6 @@ export default function HomePage() {
         <p>Slidesの一覧は終了しました。</p>
         <a href="/#writing">Writingへ</a>
       </aside>
-      <ProjectController />
     </main>
   )
 }

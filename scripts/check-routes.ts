@@ -8,7 +8,8 @@ async function main() {
   assert.equal(home.status, 200)
   const html = await home.text()
   assert.equal((html.match(/<h1\b/g) || []).length, 1)
-  assert.match(html, /id="project-gg-garage"/)
+  assert.match(html, /id="card-gg-garage"/)
+  assert.doesNotMatch(html, /<dialog\b|data-project=|href="[^"]*\?project=/)
   if (!process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID)
     assert.doesNotMatch(html, /googletagmanager\.com/)
   for (const article of articles) {

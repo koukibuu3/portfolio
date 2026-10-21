@@ -61,3 +61,9 @@ Chromeとアプリ内ブラウザでローカルproduction serverを確認。従
 - トップHTMLが直接参照する現行ブラウザ向けJSのgzip換算は約143.7KiB（nomodule専用約38.7KiBを除外）。これはファイルからの参考計測で、実ブラウザ転送量・Lighthouseの実測ではない。
 - `npm audit --omit=dev`は0件。全依存では開発用のNext ESLint plugin → fast-glob → micromatch → braces系に5件のhighが残る。監査の強制修正案はNext設定の旧メジャーへの変更を伴うため適用していない。ESLintは関連pluginのpeer範囲が合う9.39.5に固定しており、上流の10系対応と合わせて更新が必要。
 - 日次同期PRは未設定。初回は手動の`npm run sync:writing`を使う。
+
+## Projectsのモーダル停止（2026-10-21）
+
+- リリース対象のカードを非操作の`article`に変更し、矢印・ホバー強調・代替詳細・モーダルの組み込みを外した。詳細コンポーネントは再検討用に保持する。
+- `npm run lint` / `npm test`（10件）/ `npm run build` / `npm run typecheck` / `npm run check:routes`が成功。HTTP応答にモーダル・詳細リンクがなく、4記事と旧URL等の互換性も維持している。
+- ブラウザ確認はURLポリシーでタブ取得を拒否されたため未実施。旧詳細ハッシュから一覧への移動、クリック後の挙動、見た目は今回のブラウザで未確認。既存のスクリーンショットは停止前の記録である。

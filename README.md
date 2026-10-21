@@ -26,7 +26,7 @@ npm run start -- --hostname 127.0.0.1 --port 4173
 ## コンテンツ
 
 - `src/content/profile.ts`: Profile / Focus / Experience / Links
-- `src/content/projects.ts`: Projectsの表示順・名前・概要・画像・任意の詳細。モーダルに画像は再掲しない。
+- `src/content/projects.ts`: Projectsの表示順・名前・概要・画像・任意の詳細。今回のリリースでは一覧カードのみ表示する。
 - `public/projects/`: 採用素材のみ。G.G. Garageは抜粋だけを保存する。
 - `content/legacy/articles.json` / `bodies/`: 既存記事のメタデータとサニタイズ済み本文
 - `public/content/articles/`: 保存したCMS管理画像
@@ -59,7 +59,7 @@ npm run export:legacy
 
 `/`にHome / Projects / Focus / Recent Activity / Writing / About / Linksを配置する。ヘッダーはHome / Projects / Writing / Aboutへスクロールする。太陽・月でテーマを選び、手動選択を`localStorage`へ保存する。初回はOS設定に従う。
 
-ProjectsはPC4列・タブレット2列・スマホ1列。詳細は`/?project=<slug>#projects`で共有でき、閉じる・Escape・背景クリック・履歴・フォーカス復帰に対応する。JSなしではカードの通常リンクから同じページの代替詳細へ移動する。
+ProjectsはPC4列・タブレット2列・スマホ1列。今回のリリースでは画像・名前・概要の静的なカードとし、クリック・キーボード・旧詳細URLからもモーダルを開かない。矢印・ホバー強調・代替詳細も表示しない。モーダルのコンポーネントと詳細データは再検討用に保持するが、本体には組み込まない。
 
 - `/articles/<既存ID>`: 4件のIDを維持。未登録IDは404
 - `/knowledge/pages/<正の整数>`: `/#writing`へ308。0・負数・非数は404
