@@ -60,24 +60,6 @@ export default function HomePage() {
       >
         <div className="wrap section-inner">
           <div className="hero">
-            <div className="hero-copy">
-              <p className="role">{profile.role}</p>
-              <h1 id="home-title" tabIndex={-1}>
-                {profile.name}
-              </h1>
-              <p className="intro">{profile.intro}</p>
-              <div className="actions">
-                <a className="textlink" href={profile.links[0].url}>
-                  GitHub ↗<span className="sr">（外部サイト）</span>
-                </a>
-                <a className="textlink" href="/#projects">
-                  Projects →
-                </a>
-                <a className="textlink" href="/#about">
-                  About →
-                </a>
-              </div>
-            </div>
             <Image
               className="hero-avatar"
               src="/img/logo.svg"
@@ -86,6 +68,24 @@ export default function HomePage() {
               alt="パソコンを使うぶたのアイコン"
               loading="eager"
             />
+            <div className="hero-heading">
+              <p className="role">{profile.role}</p>
+              <h1 id="home-title" tabIndex={-1}>
+                {profile.name}
+              </h1>
+            </div>
+            <p className="intro">{profile.intro}</p>
+            <div className="actions">
+              <a className="textlink" href={profile.links[0].url}>
+                GitHub ↗<span className="sr">（外部サイト）</span>
+              </a>
+              <a className="textlink" href="/#projects">
+                Projects →
+              </a>
+              <a className="textlink" href="/#about">
+                About →
+              </a>
+            </div>
           </div>
         </div>
       </section>

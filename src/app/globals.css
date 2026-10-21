@@ -216,17 +216,22 @@ a {
 }
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 176px;
+  grid-template-columns: 176px minmax(0, 1fr);
   align-items: center;
-  gap: 48px;
+  column-gap: 48px;
   padding-block: 72px 80px;
   max-width: 900px;
 }
 .hero-avatar {
+  grid-row: 1 / 4;
   display: block;
   width: 176px;
   height: auto;
   border-radius: 50%;
+}
+.hero > .intro,
+.hero > .actions {
+  grid-column: 2;
 }
 .role {
   font-size: 14px;
@@ -753,20 +758,25 @@ dialog::backdrop {
     padding-block: 48px;
   }
   .hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 16px;
     padding-block: 48px 56px;
   }
   .hero-avatar {
     grid-row: 1;
-    width: 88px;
+    width: 64px;
+  }
+  .hero > .intro,
+  .hero > .actions {
+    grid-column: 1 / -1;
   }
   .hero h1 {
-    font-size: 36px;
-    margin-block: 16px 20px;
+    font-size: clamp(24px, 6vw, 36px);
+    margin-block: 8px 0;
   }
   .hero .intro {
     font-size: 15px;
+    margin-top: 24px;
   }
   .actions {
     gap: 20px;
@@ -851,9 +861,6 @@ dialog::backdrop {
 @media (max-width: 359px) {
   .wrap {
     width: calc(100% - 32px);
-  }
-  .hero h1 {
-    font-size: 34px;
   }
   .nav {
     gap: 8px;
