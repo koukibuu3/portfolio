@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ProjectVisual } from '~/components/projects/ProjectVisual'
 import { experience, profile } from '~/content/profile'
 import { projects } from '~/content/projects'
@@ -59,22 +60,32 @@ export default function HomePage() {
       >
         <div className="wrap section-inner">
           <div className="hero">
-            <p className="role">{profile.role}</p>
-            <h1 id="home-title" tabIndex={-1}>
-              {profile.name}
-            </h1>
-            <p className="intro">{profile.intro}</p>
-            <div className="actions">
-              <a className="textlink" href={profile.links[0].url}>
-                GitHub ↗<span className="sr">（外部サイト）</span>
-              </a>
-              <a className="textlink" href="/#projects">
-                Projects →
-              </a>
-              <a className="textlink" href="/#about">
-                About →
-              </a>
+            <div className="hero-copy">
+              <p className="role">{profile.role}</p>
+              <h1 id="home-title" tabIndex={-1}>
+                {profile.name}
+              </h1>
+              <p className="intro">{profile.intro}</p>
+              <div className="actions">
+                <a className="textlink" href={profile.links[0].url}>
+                  GitHub ↗<span className="sr">（外部サイト）</span>
+                </a>
+                <a className="textlink" href="/#projects">
+                  Projects →
+                </a>
+                <a className="textlink" href="/#about">
+                  About →
+                </a>
+              </div>
             </div>
+            <Image
+              className="hero-avatar"
+              src="/img/logo.svg"
+              width={176}
+              height={176}
+              alt="パソコンを使うぶたのアイコン"
+              loading="eager"
+            />
           </div>
         </div>
       </section>

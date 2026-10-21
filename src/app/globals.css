@@ -215,8 +215,18 @@ a {
   padding: 0;
 }
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 176px;
+  align-items: center;
+  gap: 48px;
   padding-block: 72px 80px;
   max-width: 900px;
+}
+.hero-avatar {
+  display: block;
+  width: 176px;
+  height: auto;
+  border-radius: 50%;
 }
 .role {
   font-size: 14px;
@@ -743,7 +753,13 @@ dialog::backdrop {
     padding-block: 48px;
   }
   .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
     padding-block: 48px 56px;
+  }
+  .hero-avatar {
+    grid-row: 1;
+    width: 88px;
   }
   .hero h1 {
     font-size: 36px;
