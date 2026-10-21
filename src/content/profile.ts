@@ -43,8 +43,7 @@ export const experience: Experience[] = [
     company: 'any株式会社',
     period: '2025年5月 – 現在',
     role: 'Software Engineer / Scrum Master · 正社員',
-    description:
-      '「Qast」の設計・開発、開発リード、複数チームのスクラムマスター。',
+    description: '「Qast」の開発に携わり、複数チームのスクラムマスターを担当。',
   },
   {
     company: '株式会社HOKUTO',
