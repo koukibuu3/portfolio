@@ -21,6 +21,8 @@ export const profile = {
     { name: 'Zenn', url: 'https://zenn.dev/koukibuu3' },
     { name: 'Qiita', url: 'https://qiita.com/koukibuu3' },
     { name: 'X', url: 'https://twitter.com/koukibuu3' },
+    { name: 'LAPRAS', url: 'https://lapras.com/public/koukibuu3' },
+    { name: 'YOUTRUST', url: 'https://youtrust.jp/users/koukibuu3' },
   ],
 }
 

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ProjectVisual } from '~/components/projects/ProjectVisual'
 import { experience, profile } from '~/content/profile'
 import { projects } from '~/content/projects'
@@ -59,10 +60,20 @@ export default function HomePage() {
       >
         <div className="wrap section-inner">
           <div className="hero">
-            <p className="role">{profile.role}</p>
-            <h1 id="home-title" tabIndex={-1}>
-              {profile.name}
-            </h1>
+            <Image
+              className="hero-avatar"
+              src="/img/logo.svg"
+              width={176}
+              height={176}
+              alt="パソコンを使うぶたのアイコン"
+              loading="eager"
+            />
+            <div className="hero-heading">
+              <p className="role">{profile.role}</p>
+              <h1 id="home-title" tabIndex={-1}>
+                {profile.name}
+              </h1>
+            </div>
             <p className="intro">{profile.intro}</p>
             <div className="actions">
               <a className="textlink" href={profile.links[0].url}>
