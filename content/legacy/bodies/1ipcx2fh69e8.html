@@ -1,0 +1,114 @@
+<p>Markdown でスライドが作れる Slidev を使って、ブログにスライド閲覧機能を実装します。</p><h2 id="hc69c85bcf9">背景</h2><p>スライドを Web 公開するサービスには以下がありますが、どうにも私は UI が好きではなくて…</p><ul><li><a href="https://www.slideshare.net/">Slideshare</a></li><li><a href="https://speakerdeck.com/">Speakerdeck</a></li><li><a href="https://www.docswell.com/">Docswell</a></li></ul><p>特にスマホで閲覧する際、ナビゲーションボタンが大きすぎてスライドの内容が見づらいと感じていました。</p><p>Docswell は他の 2 つよりシンプルな UI で、日本人の開発者によるサービスということもあり、個人的には応援したいサービスです。</p><h2 id="h3f9c11d064">Slidev の紹介</h2><p>Slidev は、Markdown で記述した内容をスライドとして表示できるツールです。Qiita や VSCode の拡張機能、Obsidian でも同様の機能がありますが、 Slidev の最大の強みは <strong>拡張性と汎用性の高さ</strong> です。</p><ul><li><strong>カスタマイズ性が高い</strong>：テンプレートを用意すれば、統一感のあるデザインのスライドを作成可能</li><li><strong>Vue.js コンポーネントを埋め込める</strong>：独自のインタラクティブ要素を追加できる</li><li><strong>発表者モードや Picture-in-Picture などの機能</strong>：発表時に便利な機能が充実</li></ul><p>ローカル環境で <code>npm run dev</code> を実行すればスライドを確認でき、ビルドすれば SPA としてホスティングも可能です。</p><p>今回は <a href="https://docs-legacy.sli.dev/guide/hosting" target="_blank" rel="noopener noreferrer">公式ドキュメント</a> を参考に、Slidev をブログに組み込んでみます。</p><h2 id="h61edbb96f7">使用要素</h2><p>今回使用する主な技術スタックは以下のとおりです。</p><ul><li>Slidev</li><li>Vue.js</li><li>pnpm workspace</li><li>Markdown / YAML Front Matter</li><li>GitHub Pages</li><li>GitHub Actions</li></ul><h2 id="h9ff89bd48f">ディレクトリ構成</h2><div><pre><code>├── list.mjs
+├── package.json
+├── packages
+│   ├── 221124-name-development
+│   │   ├── index.html
+│   │   ├── node_modules
+│   │   │   └── slidev-theme-one -&gt; ../../theme
+│   │   ├── package.json
+│   │   ├── pages
+│   │   │   └── title.md // タイトルスライド
+│   │   ├── public
+│   │   │   └── {画像ファイル}
+│   │   └── slides.md // スライド本体
+│   ├── 221208-extends-disadvantage
+│   ├── {YYMMDD}-{title}
+│   └── theme
+│       ├── README.md
+│       ├── layouts
+│       │   ├── cover.vue
+│       │   ├── default.vue
+│       │   ├── fact.vue
+│       │   ├── intro.vue
+│       │   └── splash.vue
+│       ├── package.json
+│       └── styles
+│           ├── index.ts
+│           └── layout.css
+├── pnpm-lock.yaml
+└── pnpm-workspace.yaml</code></pre></div><h2 id="h5ff3904df4">発生した課題とその解決策</h2><p>Slidev はデフォルトで <strong>1 スライド＝1 npm package</strong> という構成になっているため、通常はスライドごとに別々のリポジトリを作成する必要があります。複数スライドを作ろうと思ったらその都度リポジトリが増えるわけですね。それは嫌だ…</p><p>この問題に対して、以下の 2 つの方法を検討しました。</p><h4 id="ha32f1ba2d1">1. 1 つのスライドで頑張る（不採用）</h4><p>複数スライドを 1 つにまとめて、リンクでジャンプできるようにする方法です。しかし、スライドが増えるほど管理が大変になるため、不採用としました。</p><h4 id="h5d8e639174">2. モノレポ構成にする（採用）</h4><p>pnpm workspace を使用し、複数のスライドを 1 つのリポジトリで管理する方法を採用しました。以下の記事を参考にしています。先駆者が既に開拓してくれていました。ありがたい。</p><ul><li><a href="https://zenn.dev/s10akir/articles/f6a31bc140d6bc" target="_blank" rel="noopener noreferrer">Slidev をモノレポで管理する</a></li><li><a href="https://zenn.dev/jy8752/articles/ad565a43ba0e0a" target="_blank" rel="noopener noreferrer">GitHub Actions で Slidev をデプロイする</a></li><li><a href="https://blog.enpay.co.jp/untitled/presentation-with-slidev" target="_blank" rel="noopener noreferrer">本気の登壇をSlidevでやってみて感じた「のびしろ」</a></li></ul><p>資料に加えて、今回調整したポイントを少しだけ紹介します。</p><div><pre><code class="language-yaml">packages:
+- "packages/*"</code></pre></div><p>packages/ ディレクトリ配下の任意のディレクトリをワークスペースで管理します。</p><div><pre><code class="language-json">{
+  "scripts": {
+    "build": "pnpm run -r build",
+  }
+}</code></pre></div><p>ルートの package.json のビルドコマンドでは、ワークスペースで管理している個別パッケージの <code>build</code> コマンドを並列実行します。</p><div><pre><code class="language-json">{
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --out ../../dist/221124-name-development --base /slides/221124-name-development"
+  }
+}</code></pre></div><p>個別パッケージでは <code>build</code> コマンドにおいて出力先ディレクトリを、個別パッケージの外の <code>/dist</code> に設定しています。また、base を <code>/slides/221124-name-development</code> に設定することで、パス解決が失敗しないようにします。</p><p><span class="note-info">ディレクトリ名を直接指定するのはイケてないですね。ここを自分で書くのは大変なので、template 作成用のスクリプトを用意するか、勝手に取得するように改善したいです。</span></p><p><code>dev</code> は開発用のコマンドです。個別パッケージのディレクトリ配下で実行して表示確認をします。</p><p>調整したのはこのくらいですが、モノレポ構成にしたことで後述するいくつかの問題が発生しました。ここからはその解消をしていきます。</p><h2 id="h8c77008042">課題②：画像のパスがずれる</h2><p>Slidev は base 設定を使ってルートパスを変更できますが、<strong>YAML Front Matter の image パスには適用されません</strong>。そのため、不格好ですが <code>sed</code> コマンドを使ってビルド前に md ファイルを直接書き換えました。</p><div><pre><code class="language-json">{
+  "scripts": {
+    "fix:image": "find ./packages -name '*.md' | xargs sed -i 's/image: \"\\/public/image: \"\\./g'"
+  }
+}</code></pre></div><p>※ MacOS では sed -i '' のようにオプションを調整する必要があります。</p><h3 id="hc8c014dfcf">課題③：サムネイル用の画像が上手く生成できない</h3><p>サムネイル用に <code>title.md</code> だけ PNG エクスポートさせて、その画像を利用したかったのですが、なぜかタイトルページ単体のエクスポートでは画像が適用されませんでした。</p><p>そのため、1 ページ目以外は無駄なのですが全ページを PNG 出力することにしています。</p><p><span class="note-warn">export を実行するには Playwright が必要なので、ローカルで実行する際は必要に応じて pnpm exec playwright install などでインストールします。</span></p><p><span class="note-info">ちなみに、png や pdf のエクスポートのコマンドは提供されていますが、dev コマンドで立ち上げた後に画面上の機能から生成する方法が推奨されているようです。今回は CI で自動生成させたいのでコマンドを利用します。</span></p><h3 id="hcec11f6e93">課題④：ブログサイトから動的に参照させたい</h3><p>ブログサイトからスライドを動的に取得するため、以下の 3 つを用意しました。</p><ol><li>GitHub Pages をホスティングとして利用</li><li>GitHub Actions でスライドを自動デプロイ</li><li>スライドの一覧を JSON で提供する疑似 API</li></ol><p>以下ワークフローの設定内容です。</p><div><pre><code class="language-yaml">name: Deploy pages
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Cache pnpm modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Install fonts
+        run: |
+          sudo apt-get install fonts-noto-cjk
+      - name: Setting locale
+        run: |
+          sudo locale-gen ja_JP.UTF-8
+          sudo update-locale LANG=ja_JP.UTF-8
+      - name: Install dependencies
+        run: pnpm install
+      - name: Modify path to public
+        run: pnpm run fix:image
+      - name: Build all packages
+        run: pnpm run -r build
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install chromium
+      - name: Export PNG for all packages
+        run: pnpm --workspace-concurrency=1 run -r export:png
+      - name: Generate index page
+        run: pnpm run generate:index
+      - name: Deploy pages to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code></pre></div><p><span class="note-warn">Export PNG for all packages のステップでは、並列実行させるとエラーが発生しました。確かな原因は分からなかったので、ひとまず --workspace-concurrency=1 で同時実行数を 1 に指定することで回避しています。</span></p><p>API サーバーですが、このためにサーバーを建てたくはなかったので、GitHub Pages を擬似 API サーバーとして利用する方法を採用しました。</p><p>ビルドのタイミングでしかデータは動かないので、簡単な JS を書きスライドの一覧を JSON 形式で <code>index.html</code> として出力します。あとは取得側で <code>'Content-Type': 'application/json'</code> として解釈してデータを取得すれば、ものぐさ API サーバーの完成です。</p><div><pre><code class="language-javascript">import fs from 'fs';
+import path from 'path';
+
+const baseUrl = 'https://koukibuu3.github.io/slides';
+
+function getDirectoryContents(dirPath) {
+  const contents = fs.readdirSync(dirPath, { withFileTypes: true });
+  return contents.map(dirent =&gt; {
+    if (!dirent.isDirectory()) return null;
+
+    const indexHtml = fs.readFileSync(path.join(dirPath, dirent.name, 'index.html'), 'utf8');
+    const title = indexHtml.match(/&lt;title&gt;(.*) - Slidev&lt;\/title&gt;/)?.[1] || dirent.name;
+
+    return {
+      title,
+      url: `${baseUrl}/${dirent.name}`,
+      mainImagePath: `${baseUrl}/${dirent.name}/images/1.png`
+    };
+  });
+}
+
+function main() {
+  const directoryContents = getDirectoryContents('./dist');
+  const jsonOutput = JSON.stringify(directoryContents, null, 2);
+  console.log(jsonOutput);
+  fs.writeFileSync('./dist/index.html', jsonOutput);
+}
+
+main();</code></pre></div><h2 id="ha214098e44">まとめ</h2><p>Slidev を使い、ブログにスライド閲覧機能を組み込む方法を紹介しました。</p><ul><li>Markdown でスライドを作成</li><li>モノレポ構成で管理しやすくする</li><li>GitHub Pages でホスティングし、GitHub Actions で自動デプロイ</li><li>JSON を使った擬似 API でスライド一覧を提供</li></ul><p>この方法なら、シンプルかつ管理しやすい形でスライドを公開できます。実際に動作している例は <a href="https://koukibuu3.github.io/slides/221124-name-development/" target="_blank" rel="noopener noreferrer">こちら</a> 、リポジトリは <a href="https://github.com/koukibuu3/slides" target="_blank" rel="noopener noreferrer">GitHub</a> に公開しています。</p>

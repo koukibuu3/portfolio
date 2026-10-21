@@ -1,9 +1,11 @@
-const NotFoundPage = () => {
+export default function NotFound() {
   return (
-    <div className="mx-auto max-w-screen-md text-center">
-      <h1 className="text-xl font-bold">404 Not Found</h1>
-    </div>
+    <main id="main" className="wrap error-page" tabIndex={-1}>
+      <h1>404 Not Found</h1>
+      <p>ページが見つかりませんでした。</p>
+      <a className="textlink" href="/">
+        ホームへ戻る
+      </a>
+    </main>
   )
 }
-
-export default NotFoundPage

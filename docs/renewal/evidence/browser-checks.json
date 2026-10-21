@@ -1,0 +1,1241 @@
+{
+  "date": "2026-10-21",
+  "version": "0.3",
+  "browser": "151.0.7922.34",
+  "checks": [
+    {
+      "name": "light OS initial 320",
+      "passed": true
+    },
+    {
+      "name": "light single page contents 320",
+      "passed": true
+    },
+    {
+      "name": "light project card surfaces 320",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "light section background boundaries 320",
+      "passed": true,
+      "detail": [
+        "rgb(247, 248, 245)",
+        "rgb(237, 242, 237)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(237, 242, 237)"
+      ]
+    },
+    {
+      "name": "light chronological timeline 320",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "light theme icon choices 320",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "light anchor home 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 178.375,
+        "headerBottom": 178.375,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "light anchor projects 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 144.4375,
+        "headerBottom": 124,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "light anchor writing 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 143.78125,
+        "headerBottom": 124,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "light anchor about 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 144.359375,
+        "headerBottom": 124,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "light OS initial 390",
+      "passed": true
+    },
+    {
+      "name": "light single page contents 390",
+      "passed": true
+    },
+    {
+      "name": "light project card surfaces 390",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "light section background boundaries 390",
+      "passed": true,
+      "detail": [
+        "rgb(247, 248, 245)",
+        "rgb(237, 242, 237)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(237, 242, 237)"
+      ]
+    },
+    {
+      "name": "light chronological timeline 390",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "light theme icon choices 390",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "light anchor home 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 178.375,
+        "headerBottom": 178.375,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "light anchor projects 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.4375,
+        "headerBottom": 124,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "light anchor writing 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.40625,
+        "headerBottom": 124,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "light anchor about 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.203125,
+        "headerBottom": 124,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "light OS initial 768",
+      "passed": true
+    },
+    {
+      "name": "light single page contents 768",
+      "passed": true
+    },
+    {
+      "name": "light project card surfaces 768",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "light section background boundaries 768",
+      "passed": true,
+      "detail": [
+        "rgb(247, 248, 245)",
+        "rgb(237, 242, 237)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(237, 242, 237)"
+      ]
+    },
+    {
+      "name": "light chronological timeline 768",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "light theme icon choices 768",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "light anchor home 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 119.1875,
+        "headerBottom": 119.1875,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "light anchor projects 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 104.140625,
+        "headerBottom": 84,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "light anchor writing 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 104.34375,
+        "headerBottom": 84,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "light anchor about 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 103.984375,
+        "headerBottom": 84,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "light OS initial 1440",
+      "passed": true
+    },
+    {
+      "name": "light single page contents 1440",
+      "passed": true
+    },
+    {
+      "name": "light project card surfaces 1440",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "light section background boundaries 1440",
+      "passed": true,
+      "detail": [
+        "rgb(247, 248, 245)",
+        "rgb(237, 242, 237)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(247, 248, 245)",
+        "rgb(255, 255, 255)",
+        "rgb(237, 242, 237)"
+      ]
+    },
+    {
+      "name": "light chronological timeline 1440",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "light theme icon choices 1440",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "light anchor home 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 119.1875,
+        "headerBottom": 119.1875,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "light anchor projects 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 104.140625,
+        "headerBottom": 84,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "light anchor writing 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 103.65625,
+        "headerBottom": 84,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "light anchor about 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 104.296875,
+        "headerBottom": 84,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "dark OS initial 320",
+      "passed": true
+    },
+    {
+      "name": "dark single page contents 320",
+      "passed": true
+    },
+    {
+      "name": "dark project card surfaces 320",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "dark section background boundaries 320",
+      "passed": true,
+      "detail": [
+        "rgb(21, 27, 24)",
+        "rgb(32, 43, 36)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(32, 43, 36)"
+      ]
+    },
+    {
+      "name": "dark chronological timeline 320",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "dark theme icon choices 320",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "dark anchor home 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 178.375,
+        "headerBottom": 178.375,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "dark anchor projects 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 144.4375,
+        "headerBottom": 124,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "dark anchor writing 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 143.78125,
+        "headerBottom": 124,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "dark anchor about 320",
+      "passed": true,
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "top": 144.359375,
+        "headerBottom": 124,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "dark OS initial 390",
+      "passed": true
+    },
+    {
+      "name": "dark single page contents 390",
+      "passed": true
+    },
+    {
+      "name": "dark project card surfaces 390",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 12,
+          "padding": 24,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "dark section background boundaries 390",
+      "passed": true,
+      "detail": [
+        "rgb(21, 27, 24)",
+        "rgb(32, 43, 36)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(32, 43, 36)"
+      ]
+    },
+    {
+      "name": "dark chronological timeline 390",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "dark theme icon choices 390",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "dark anchor home 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 178.375,
+        "headerBottom": 178.375,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "dark anchor projects 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.4375,
+        "headerBottom": 124,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "dark anchor writing 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.40625,
+        "headerBottom": 124,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "dark anchor about 390",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "top": 144.203125,
+        "headerBottom": 124,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "dark OS initial 768",
+      "passed": true
+    },
+    {
+      "name": "dark single page contents 768",
+      "passed": true
+    },
+    {
+      "name": "dark project card surfaces 768",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "dark section background boundaries 768",
+      "passed": true,
+      "detail": [
+        "rgb(21, 27, 24)",
+        "rgb(32, 43, 36)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(32, 43, 36)"
+      ]
+    },
+    {
+      "name": "dark chronological timeline 768",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "dark theme icon choices 768",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "dark anchor home 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 119.1875,
+        "headerBottom": 119.1875,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "dark anchor projects 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 104.140625,
+        "headerBottom": 84,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "dark anchor writing 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 104.34375,
+        "headerBottom": 84,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "dark anchor about 768",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "scrollWidth": 768,
+        "top": 103.984375,
+        "headerBottom": 84,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "dark OS initial 1440",
+      "passed": true
+    },
+    {
+      "name": "dark single page contents 1440",
+      "passed": true
+    },
+    {
+      "name": "dark project card surfaces 1440",
+      "passed": true,
+      "detail": [
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        },
+        {
+          "bg": "rgb(38, 51, 43)",
+          "radius": 16,
+          "padding": 32,
+          "border": "1px"
+        }
+      ]
+    },
+    {
+      "name": "dark section background boundaries 1440",
+      "passed": true,
+      "detail": [
+        "rgb(21, 27, 24)",
+        "rgb(32, 43, 36)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(21, 27, 24)",
+        "rgb(29, 38, 33)",
+        "rgb(32, 43, 36)"
+      ]
+    },
+    {
+      "name": "dark chronological timeline 1440",
+      "passed": true,
+      "detail": {
+        "tag": "OL",
+        "line": "2px",
+        "dot": "50%"
+      }
+    },
+    {
+      "name": "dark theme icon choices 1440",
+      "passed": true,
+      "detail": [
+        {
+          "size": 44,
+          "selected": "false",
+          "label": "ライトモード",
+          "icon": true
+        },
+        {
+          "size": 44,
+          "selected": "true",
+          "label": "ダークモード",
+          "icon": true
+        }
+      ]
+    },
+    {
+      "name": "dark anchor home 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 119.1875,
+        "headerBottom": 119.1875,
+        "active": "#home",
+        "focused": "home-title"
+      }
+    },
+    {
+      "name": "dark anchor projects 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 104.140625,
+        "headerBottom": 84,
+        "active": "#projects",
+        "focused": "projects-title"
+      }
+    },
+    {
+      "name": "dark anchor writing 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 103.65625,
+        "headerBottom": 84,
+        "active": "#writing",
+        "focused": "writing-title"
+      }
+    },
+    {
+      "name": "dark anchor about 1440",
+      "passed": true,
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "top": 104.296875,
+        "headerBottom": 84,
+        "active": "#about",
+        "focused": "about-title"
+      }
+    },
+    {
+      "name": "direct anchor",
+      "passed": true
+    },
+    {
+      "name": "anchor history back",
+      "passed": true
+    },
+    {
+      "name": "anchor history forward",
+      "passed": true
+    },
+    {
+      "name": "manual scroll active without URL mutation",
+      "passed": true
+    },
+    {
+      "name": "theme toggle to dark",
+      "passed": true
+    },
+    {
+      "name": "theme persisted after reload",
+      "passed": true
+    },
+    {
+      "name": "manual theme precedes OS",
+      "passed": true
+    },
+    {
+      "name": "modal opens on same section",
+      "passed": true
+    },
+    {
+      "name": "modal Tab focus",
+      "passed": true
+    },
+    {
+      "name": "modal Shift+Tab focus",
+      "passed": true
+    },
+    {
+      "name": "modal close restores opener and scroll",
+      "passed": true
+    },
+    {
+      "name": "forward reopens modal",
+      "passed": true
+    },
+    {
+      "name": "back closes modal",
+      "passed": true
+    },
+    {
+      "name": "direct modal salestack",
+      "passed": true
+    },
+    {
+      "name": "reload close salestack",
+      "passed": true
+    },
+    {
+      "name": "direct modal scrum-workbench",
+      "passed": true
+    },
+    {
+      "name": "reload close scrum-workbench",
+      "passed": true
+    },
+    {
+      "name": "direct modal gg-garage",
+      "passed": true
+    },
+    {
+      "name": "reload close gg-garage",
+      "passed": true
+    },
+    {
+      "name": "direct modal core-uma",
+      "passed": true
+    },
+    {
+      "name": "reload close core-uma",
+      "passed": true
+    },
+    {
+      "name": "invalid project preserves unrelated query",
+      "passed": true
+    },
+    {
+      "name": "duplicate project normalized",
+      "passed": true
+    },
+    {
+      "name": "older writing initially collapsed",
+      "passed": true
+    },
+    {
+      "name": "older writing expands in page",
+      "passed": true
+    },
+    {
+      "name": "mobile fullscreen modal",
+      "passed": true,
+      "detail": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "OS dark without preference",
+      "passed": true
+    },
+    {
+      "name": "OS change follows without preference",
+      "passed": true
+    },
+    {
+      "name": "storage blocked still toggles",
+      "passed": true
+    },
+    {
+      "name": "no JS full page content",
+      "passed": true
+    },
+    {
+      "name": "no JS OS dark theme",
+      "passed": true
+    },
+    {
+      "name": "no JS anchor navigation",
+      "passed": true
+    },
+    {
+      "name": "no JS older writing",
+      "passed": true
+    },
+    {
+      "name": "no JS project fallback",
+      "passed": true
+    },
+    {
+      "name": "smooth scrolling enabled",
+      "passed": true
+    },
+    {
+      "name": "smooth scroll reaches About",
+      "passed": true
+    },
+    {
+      "name": "light contrast >= 4.5",
+      "passed": true,
+      "detail": {
+        "ink/canvas": 13.85,
+        "muted/canvas": 5.25,
+        "accent/canvas": 6.84,
+        "ink/surface": 14.77,
+        "muted/surface": 5.6,
+        "accent/surface": 7.29,
+        "ink/card": 14.77,
+        "muted/card": 5.6,
+        "accent/card": 7.29,
+        "ink/soft": 13.03,
+        "muted/soft": 4.94,
+        "accent/soft": 6.43,
+        "on/accent": 7.29
+      }
+    },
+    {
+      "name": "dark contrast >= 4.5",
+      "passed": true,
+      "detail": {
+        "ink/canvas": 15.52,
+        "muted/canvas": 8.75,
+        "accent/canvas": 10.24,
+        "ink/surface": 13.8,
+        "muted/surface": 7.78,
+        "accent/surface": 9.1,
+        "ink/card": 11.73,
+        "muted/card": 6.61,
+        "accent/card": 7.73,
+        "ink/soft": 13.02,
+        "muted/soft": 7.34,
+        "accent/soft": 8.59,
+        "on/accent": 9.57
+      }
+    },
+    {
+      "name": "no browser JS errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "contrasts": {
+    "light": {
+      "ink/canvas": 13.85,
+      "muted/canvas": 5.25,
+      "accent/canvas": 6.84,
+      "ink/surface": 14.77,
+      "muted/surface": 5.6,
+      "accent/surface": 7.29,
+      "ink/card": 14.77,
+      "muted/card": 5.6,
+      "accent/card": 7.29,
+      "ink/soft": 13.03,
+      "muted/soft": 4.94,
+      "accent/soft": 6.43,
+      "on/accent": 7.29
+    },
+    "dark": {
+      "ink/canvas": 15.52,
+      "muted/canvas": 8.75,
+      "accent/canvas": 10.24,
+      "ink/surface": 13.8,
+      "muted/surface": 7.78,
+      "accent/surface": 9.1,
+      "ink/card": 11.73,
+      "muted/card": 6.61,
+      "accent/card": 7.73,
+      "ink/soft": 13.02,
+      "muted/soft": 7.34,
+      "accent/soft": 8.59,
+      "on/accent": 9.57
+    }
+  },
+  "errors": []
+}

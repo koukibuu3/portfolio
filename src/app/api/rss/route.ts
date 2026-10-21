@@ -1,50 +1,37 @@
 import { Feed } from 'feed'
-
-import { microCmsClient } from '~/modules/libs'
-import { ArticleRepository } from '~/modules/repositories/ArticleRepository'
-import { Article } from '~/types/Article'
-
+import { articles, articleWithBody } from '~/content/articles'
+import { site } from '~/content/site'
+export const dynamic = 'force-static'
 export async function GET() {
   const feed = new Feed({
     title: "Engineer's Blog | koukibuu3",
-    description: '',
-    id: process.env.SITE_URL ?? '',
-    link: process.env.SITE_URL ?? '',
+    description: site.description,
+    id: site.url,
+    link: site.url,
     language: 'ja',
-    favicon: `${process.env.SITE_URL}/favicon.ico`,
-    copyright: `All rights reserved ${new Date().getFullYear()}, koukibuu3`,
-    updated: new Date(),
-    generator: 'Feed for Node.js',
-    feedLinks: {
-      rss2: `${process.env.SITE_URL}/api/rss`,
-    },
-    author: {
-      name: 'koukibuu3',
-      email: 'koukibuu3@gmail.com',
-      link: process.env.SITE_URL,
-    },
+    favicon: `${site.url}/favicon.ico`,
+    copyright: 'Kouki Akasaka',
+    updated: new Date(
+      Math.max(...articles.map((article) => Date.parse(article.updatedAt))),
+    ),
+    feedLinks: { rss2: `${site.url}/api/rss` },
+    author: { name: 'koukibuu3', link: site.url },
   })
-
-  const articles = await new ArticleRepository(
-    microCmsClient,
-  ).getWithPagination(1, 50)
-
-  articles.forEach((article: Article) => {
+  for (const article of await Promise.all(articles.map(articleWithBody)))
     feed.addItem({
       title: article.title,
-      id: `${process.env.SITE_URL}/articles/${article.id}`,
-      link: `${process.env.SITE_URL}/articles/${article.id}`,
+      id: articles.find((saved) => saved.id === article.id)!.rssGuid,
+      link: `${site.url}/articles/${article.id}`,
       description: article.description,
-      content: article.body,
-      date: new Date(article.updatedAt),
+      content: article.body.replaceAll(
+        'src="/content/',
+        `src="${site.url}/content/`,
+      ),
+      date: new Date(article.publishedAt),
       category: article.tags.map((tag) => ({ name: tag.name })),
-      image: article.mainImage.url,
+      image: `${site.url}${article.mainImage.url}`,
     })
-  })
-
   return new Response(feed.rss2(), {
-    headers: {
-      'Content-Type': 'application/xml',
-    },
+    headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
   })
 }
