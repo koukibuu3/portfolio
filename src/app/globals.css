@@ -348,6 +348,13 @@ a {
   background: #fff4f2;
   padding: 20px 8px;
 }
+.project-media--zatsubo {
+  background: #e3ede4;
+  padding: 20px;
+}
+.project-media--zatsubo img {
+  width: min(100%, 96px);
+}
 .project-media--illustration {
   background: #edf2ef;
   padding: 16px 24px;

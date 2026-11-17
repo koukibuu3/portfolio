@@ -12,6 +12,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'zatsubo',
+    name: 'ざつ簿',
+    summary: '支出を100円単位で記録できるiPhone向け家計簿',
+    image: {
+      src: '/projects/zatsubo-icon.webp',
+      width: 192,
+      height: 192,
+      variant: 'zatsubo',
+    },
+  },
+  {
     slug: 'scrum-workbench',
     name: 'ScrumWorkbench',
     summary: 'スクラムイベントの準備・進行支援',
