@@ -3,7 +3,7 @@ export const profile = {
   role: 'Software Engineer / Scrum Master',
   intro: 'Webアプリケーションの設計・開発と、スクラムチームの支援。',
   summary:
-    'バックエンド開発を起点に、Webアプリケーションの設計・開発と複数チームのスクラムマスターを担当。',
+    'Webアプリケーションの設計・開発と、スクラムマスターとしての開発プロセス改善を軸に活動しています。',
   focus: [
     {
       id: 'software-design',

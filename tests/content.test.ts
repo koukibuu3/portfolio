@@ -142,8 +142,10 @@ test('saved legacy export is complete and body links and code survive', async ()
 })
 
 test('minimal project details contain content without images or empty optional sections', () => {
+  const project = projects.find(({ slug }) => slug === 'gg-garage')
+  assert.ok(project)
   const html = renderToStaticMarkup(
-    createElement(ProjectDetails, { project: projects[2], titleId: 'title' }),
+    createElement(ProjectDetails, { project, titleId: 'title' }),
   )
   assert.match(html, /G.G. Garage/)
   assert.match(html, /共同ゲーム開発/)
